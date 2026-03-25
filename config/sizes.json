@@ -1,0 +1,249 @@
+{
+	"breakpoints": [
+		"default",
+		"medium-desktop",
+		"tablet",
+		"mobile"
+	],
+	"sizes": {
+		"1px": {
+			"label": "1px",
+			"values": [
+				"max(1px, 0.0625rem)"
+			]
+		},
+		"0-5": {
+			"label": "0-5 (8px)",
+			"values": [
+				"0.5rem"
+			]
+		},
+		"0-75": {
+			"label": "0-75 (12px)",
+			"values": [
+				"0.75rem"
+			]
+		},
+		"1": {
+			"label": "1 (16px)",
+			"values": [
+				"1rem",
+				"1rem",
+				"1rem",
+				"0.875rem"
+			]
+		},
+		"17px": {
+			"label": "17px",
+			"values": [
+				"1.0625rem",
+				"1.0625rem",
+				"1rem",
+				"0.875rem"
+			]
+		},
+		"1-125": {
+			"label": "1-125 (18px)",
+			"values": [
+				"1.125rem",
+				"1.125rem",
+				"1rem",
+				"0.875rem"
+			]
+		},
+		"1-25": {
+			"label": "1-25 (20px)",
+			"values": [
+				"1.25rem",
+				"1.125rem",
+				"1rem"
+			]
+		},
+		"1-5": {
+			"label": "1-5 (24px)",
+			"values": [
+				"1.5rem",
+				"1.5rem",
+				"1.25rem",
+				"1.125rem"
+			]
+		},
+		"1-75": {
+			"label": "1-75 (28px)",
+			"values": [
+				"1.75rem",
+				"1.75rem",
+				"1.5rem",
+				"1.125rem"
+			]
+		},
+		"2": {
+			"label": "2 (32px)",
+			"values": [
+				"2rem",
+				"2rem",
+				"1.75rem",
+				"1.25rem"
+			]
+		},
+		"2-25": {
+			"label": "2-25 (36px)",
+			"values": [
+				"2.25rem",
+				"2rem",
+				"1.5rem"
+			]
+		},
+		"2-5": {
+			"label": "2-5 (40px)",
+			"values": [
+				"2.5rem",
+				"2.5rem",
+				"1.75rem",
+				"1.5rem"
+			]
+		},
+		"2-75": {
+			"label": "2-75 (44px)",
+			"values": [
+				"2.75rem",
+				"2.75rem",
+				"2.25rem",
+				"1.75rem"
+			]
+		},
+		"3": {
+			"label": "3 (48px)",
+			"values": [
+				"3rem",
+				"3rem",
+				"2rem",
+				"1.5rem"
+			]
+		},
+		"3-5": {
+			"label": "3-5 (56px)",
+			"values": [
+				"3.5rem",
+				"2.5rem",
+				"1.5rem"
+			]
+		},
+		"4": {
+			"label": "4 (64px)",
+			"values": [
+				"4rem",
+				"4rem",
+				"3rem",
+				"2.25rem"
+			]
+		},
+		"4-5": {
+			"label": "4-5 (72px)",
+			"values": [
+				"4.5rem",
+				"4.5rem",
+				"3.5rem",
+				"2.25rem"
+			]
+		},
+		"5": {
+			"label": "5 (80px)",
+			"values": [
+				"5rem",
+				"5rem",
+				"4rem",
+				"2.25rem"
+			]
+		},
+		"5-5": {
+			"label": "5-5 (88px)",
+			"values": [
+				"5.5rem",
+				"5.5rem",
+				"4.5rem",
+				"2.25rem"
+			]
+		},
+		"6": {
+			"label": "6 (96px)",
+			"values": [
+				"6rem",
+				"6rem",
+				"5rem",
+				"2.25rem"
+			]
+		},
+		"6-5": {
+			"label": "6-5 (104px)",
+			"values": [
+				"6.5rem",
+				"6.5rem",
+				"5.5rem",
+				"2.25rem"
+			]
+		},
+		"8": {
+			"label": "8 (128px)",
+			"values": [
+				"8rem",
+				"8rem",
+				"7rem",
+				"4rem"
+			]
+		},
+		"11-5": {
+			"label": "11-5 (184px)",
+			"values": [
+				"11.5rem",
+				"11.5rem",
+				"7rem",
+				"4rem"
+			]
+		}
+	},
+	"utilities": {
+		"mb": {
+			"property": "margin-bottom",
+			"default": [
+				"0-5",
+				"0-75",
+				"1",
+				"1-5",
+				"2",
+				"3",
+				"3-5",
+				"4",
+				"4-5",
+				"5",
+				"5-5",
+				"6",
+				"6-5",
+				"8",
+				"11-5"
+			],
+			"mobile": {
+				"1": "1rem",
+				"0-5": "0.5rem",
+				"0-25": "0.25rem"
+			}
+		},
+		"mt": {
+			"property": "margin-top",
+			"default": [
+				"0-75",
+				"1",
+				"2",
+				"3",
+				"4",
+				"5",
+				"6"
+			],
+			"mobile": {
+				"1": "1rem",
+				"0-5": "0.5rem",
+				"0-25": "0.25rem"
+			}
+		}
+	}
+}

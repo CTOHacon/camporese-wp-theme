@@ -1,0 +1,293 @@
+.reviews-section {
+	background: #F3F6FA;
+	border-radius: 0.25rem;
+	padding-top: 3.5rem;
+
+	--gap: var(--size-4);
+	--rating-bar-width: 21.5rem;
+
+	@include smaller-than('mobile') {
+		padding-top: var(--size-2);
+		--gap: var(--size-1-5);
+	}
+
+	&__inner {
+		display: flex;
+		gap: var(--gap);
+
+		@include smaller-than('mobile') {
+			flex-direction: column;
+		}
+	}
+
+	&__rating-bar {
+		flex: var(--rating-bar-width) 0 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: var(--size-1-5) var(--size-2);
+		border-radius: 0.25rem;
+		overflow: hidden;
+		position: relative;
+		background-image: url('../components/sections/reviews-section/assets/rating-bar-background.png');
+		background-size: cover;
+		background-position: center;
+
+		@include smaller-than('mobile') {
+			flex: none;
+			width: 100%;
+			flex-direction: row;
+			padding: var(--size-1-5) var(--size-1);
+			gap: var(--size-1);
+		}
+	}
+
+	&__rating-bar-content {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--size-1);
+
+		@include smaller-than('mobile') {
+			flex-direction: row;
+			gap: var(--size-1);
+		}
+	}
+
+	&__rating-mark {
+		position: relative;
+		width: 6.8rem;
+		height: 6.8rem;
+
+		@include smaller-than('mobile') {
+			width: 4rem;
+			height: 4rem;
+		}
+	}
+
+	&__rating-mark-icon {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__rating-mark-value {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-family: 'Poltawski Nowy', serif;
+		font-size: 2.625rem;
+		font-weight: 400;
+		line-height: 100%;
+		color: #FFFFFF;
+		text-align: center;
+
+		@include smaller-than('mobile') {
+			font-size: 1.5rem;
+		}
+	}
+
+	&__rating-bar-text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1.25rem;
+
+		@include smaller-than('mobile') {
+			align-items: flex-start;
+			gap: 0.75rem;
+		}
+	}
+
+	&__rating-bar-title {
+		font-family: 'Poltawski Nowy', serif;
+		font-size: var(--size-2);
+		font-weight: 400;
+		line-height: 100%;
+		color: #FFFFFF;
+		white-space: nowrap;
+
+		@include smaller-than('mobile') {
+			font-size: var(--size-1-25);
+		}
+	}
+
+	&__rating-bar-separator {
+		display: block;
+		width: 4.5rem;
+		height: var(--size-1px);
+		background: #FFFFFF;
+	}
+
+	&__rating-bar-reviews-link {
+		font-size: var(--size-1);
+		font-weight: 400;
+		line-height: 100%;
+		color: #A0D9D0;
+		text-align: center;
+		text-decoration: underline;
+
+		@include smaller-than('mobile') {
+			font-size: 0.875rem;
+			text-align: left;
+		}
+	}
+
+	&__main {
+		width: calc(100% - var(--rating-bar-width) - var(--gap) + max(0rem, calc(50vw - var(--lib-container-plain-max-width)/2)));
+
+		@include smaller-than('mobile') {
+			width: 100%;
+		}
+	}
+
+	&__head {
+		margin-bottom: var(--size-2);
+
+		@include smaller-than('mobile') {
+			margin-bottom: var(--size-1);
+		}
+	}
+
+	&__title {
+		font-family: 'Poltawski Nowy', serif;
+		font-size: var(--size-3);
+		font-weight: 400;
+		line-height: 112%;
+		color: #001020;
+		margin-bottom: var(--size-1);
+
+		@include smaller-than('mobile') {
+			font-size: var(--size-1-75);
+		}
+	}
+
+	&__description {
+		font-size: var(--size-1);
+		font-weight: 300;
+		line-height: 132%;
+		color: #001020;
+		opacity: 0.8;
+
+		strong {
+			font-weight: 700;
+		}
+	}
+
+	&__slider-wrapper {
+		width: calc(100%);
+		overflow: hidden;
+
+		.swiper {
+			padding-bottom: 4.625rem;
+
+			@include smaller-than('mobile') {
+				padding-bottom: 3.125rem;
+			}
+		}
+
+		@include smaller-than('mobile') {
+			width: 100%;
+		}
+	}
+
+	&__slide {
+		flex: 21.5rem 0 0;
+
+		display: flex;
+		flex-direction: column;
+		gap: var(--size-1);
+		padding: var(--size-2);
+		background: #FFFFFF;
+		border: var(--size-1px) solid #E5EDF6;
+		border-radius: 0.25rem;
+		transition: box-shadow 0.3s ease-in-out;
+
+		&:hover {
+			box-shadow: 3.5rem 1.5rem 3.5rem -1rem rgba(133, 127, 115, 0.24);
+		}
+
+		@include smaller-than('mobile') {
+			flex: 100% 0 0;
+		}
+	}
+
+	&__stars {
+		display: flex;
+		gap: 0.25rem;
+	}
+
+	&__star {
+		width: var(--size-1);
+		height: var(--size-1);
+	}
+
+	&__review-text {
+		font-size: var(--size-1);
+		font-weight: 400;
+		line-height: 150%;
+		letter-spacing: -0.02em;
+		color: #677583;
+		text-transform: capitalize;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 5;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		min-height: calc(5 * (var(--size-1) * 1.5));
+	}
+
+	&__separator {
+		width: 100%;
+		height: auto;
+	}
+
+	&__author {
+		display: flex;
+		gap: 0.75rem;
+		align-items: center;
+	}
+
+	&__author-image-wrapper {
+		width: 3rem;
+		height: 3rem;
+		border-radius: 50%;
+		overflow: hidden;
+		flex-shrink: 0;
+	}
+
+	&__author-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__author-info {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		text-transform: capitalize;
+	}
+
+	&__author-name {
+		font-family: 'Poltawski Nowy', serif;
+		font-size: var(--size-1);
+		font-weight: 400;
+		line-height: 133%;
+		color: #12283E;
+	}
+
+	&__author-date {
+		font-size: 0.875rem;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: -0.02em;
+		color: #677583;
+		opacity: 0.5;
+	}
+}

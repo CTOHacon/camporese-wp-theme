@@ -1,0 +1,152 @@
+.metrics-list-widget {
+    --item-height: 8.75rem;
+
+    width: 24rem;
+    height: calc(var(--item-height) * var(--c-items-quantity));
+    overflow: hidden;
+
+    border-radius: 0.25rem;
+    box-shadow: -3.5625rem 1.5rem 3.5rem -1rem rgba(0, 0, 0, 0.13);
+
+    @include smaller-than('mobile') {
+        width: 100%;
+        --item-height: 5rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.4s ease;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        overflow: hidden;
+        height: var(--item-height);
+        transition: height 0.4s ease;
+
+        &._active {
+            height: calc(var(--item-height) * 2);
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+        width: 100%;
+        height: var(--item-height);
+        flex-shrink: 0;
+        padding-left: var(--size-2);
+        padding-right: var(--size-1-5);
+        border: none;
+        background: none;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    &__titles {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        min-width: 0;
+    }
+
+    &__value {
+        font-family: "Poltawski Nowy";
+        font-weight: 400;
+        font-size: var(--size-1-75);
+        line-height: 1.12;
+        color: #041D37;
+    }
+
+    &__label {
+        font-weight: 400;
+        font-size: var(--size-1);
+        line-height: 1.32;
+        color: #238E7D;
+        text-transform: uppercase;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.0625rem;
+        height: 2.0625rem;
+        color: #041D37;
+        border: var(--size-1px) solid currentColor;
+        border-radius: 0.25rem;
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+        @include smaller-than('mobile') {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+    &__icon-plus {
+        width: var(--size-1);
+        height: var(--size-1);
+        transition: transform 0.3s ease;
+    }
+
+    &__header:hover &__icon {
+        background-color: #238E7D;
+        border-color: #238E7D;
+        color: #fff;
+    }
+
+    &__item._active &__icon {
+        background-color: #238E7D;
+        border-color: #238E7D;
+        color: #fff;
+    }
+
+    &__item._active &__icon-plus {
+        transform: rotate(45deg);
+    }
+
+    &__content {
+        flex: 1;
+        min-height: 0;
+        padding: 0 var(--size-1-5) 0 var(--size-2);
+    }
+
+    &__description {
+        font-weight: 300;
+        font-size: var(--size-1-25);
+        line-height: 1.44;
+        color: #041D37;
+        opacity: 0.7;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @include smaller-than('mobile') {
+            font-size: var(--size-1);
+        }
+    }
+
+    &__separator {
+        position: absolute;
+        bottom: 0;
+        left: var(--size-2);
+        right: var(--size-1-5);
+        height: var(--size-1px);
+        background-color: #E5EDF6;
+        transition: background-color 0.3s ease;
+    }
+
+    &__header:hover~&__separator,
+    &__item._active &__separator {
+        background-color: #238E7D;
+    }
+}

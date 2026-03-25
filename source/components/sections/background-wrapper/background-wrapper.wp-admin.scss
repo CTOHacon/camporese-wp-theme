@@ -1,0 +1,5 @@
+.background-wrapper {
+    &::before {
+        z-index: 0 !important;
+    }
+}

@@ -1,0 +1,82 @@
+.page-typography-content-base {
+    &__pre-title {
+        color: #238E7D;
+        font-size: var(--size-1-125);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 132%;
+        text-transform: uppercase;
+        margin-bottom: var(--size-1);
+    }
+
+    &__title {
+        max-width: 51.5rem;
+        font-family: Poltawski Nowy;
+        font-size: var(--size-3-5);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 124%;
+        margin-bottom: var(--size-2-75);
+    }
+
+    &__image-wrapper {
+        height: min(50vh, 35rem);
+        border-radius: 0.25rem;
+        overflow: hidden;
+
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__sidebar-layout {
+        display: grid;
+        grid-template-columns: calc(100% - 30rem - var(--size-3-5)) 30rem;
+        gap: var(--size-3-5);
+        padding-right: var(--size-3);
+
+        @include smaller-than('tablet') {
+            padding-right: 0;
+        }
+
+        @include smaller-than('mobile') {
+            grid-template-columns: 100%;
+        }
+    }
+
+    &__main {
+
+        // if first-child is (p, h1,h2,h3,h4,h5), add padding-top
+
+        &:has(p:first-child),
+        &:has(h1:first-child),
+        &:has(h2:first-child),
+        &:has(h3:first-child),
+        &:has(h4:first-child),
+        &:has(h5:first-child) {
+            padding-top: var(--size-2);
+        }
+    }
+
+    &__aside {
+        margin-top: -12rem;
+        position: relative;
+        height: calc(100% + 12rem);
+
+        @include smaller-than('mobile') {
+            margin-top: 0;
+            height: auto;
+        }
+    }
+
+    &__aside-content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-1);
+        position: sticky;
+        top: calc(var(--header-height, 0px) + 1rem);
+    }
+}

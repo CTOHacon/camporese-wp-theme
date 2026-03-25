@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/Alex/Documents/projects/Dnovo Clients/Padra Clinik/app/public/wp-content/themes/wp-padraclinic-theme/source/components/form-field/**)",
+      "Skill(component-php-template)",
+      "Skill(component-php-template:*)",
+      "Skill(component-scss)",
+      "Skill(component-scss:*)",
+      "Skill(component-ts-general)",
+      "Skill(component-ts-general:*)",
+      "Read(//Users/Alex/Documents/projects/SEO Company/app/public/wp-content/themes/seo-company/source/components/highlighted-content/**)",
+      "Read(//Users/Alex/Documents/projects/SEO Company/app/public/wp-content/themes/seo-company/source/components/blockquote/**)",
+      "Read(//Users/Alex/Documents/projects/Dnovo Clients/**)",
+      "Read(//Users/Alex/Documents/projects/**)"
+    ],
+    "defaultMode": "bypassPermissions"
+  }
+}

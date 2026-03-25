@@ -1,0 +1,104 @@
+/**
+Exposed properties:
+
+Sizing:
+--c-padding
+--c-max-width
+--c-height
+--c-border-radius
+--c-font-size
+--c-icon-size
+
+Colors:
+--c-main-color — background color
+--c-secondary-color — text/icon color
+--c-border-color
+**/
+
+.button {
+	// ---- Defaults for exposed variables ----
+	--default-padding: 0 var(--size-1-75);
+	--default-height: var(--size-4);
+	--default-border-radius: 4.3125rem;
+	--default-font-size: var(--size-1-125);
+	--default-icon-size: var(--size-1-5);
+
+	// ---- Root styles ----
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+
+	&__text {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+	}
+
+	padding: var(--c-padding, var(--default-padding));
+	max-width: var(--c-max-width, 100%);
+	min-height: var(--c-height, var(--default-height));
+	border-radius: var(--c-border-radius, var(--default-border-radius));
+
+	font-weight: 400;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: var(--c-font-size, var(--default-font-size));
+	line-height: 100%;
+
+	border: var(--size-1px) solid var(--c-border-color, var(--c-main-color));
+	background: var(--c-main-color, transparent);
+	color: var(--c-secondary-color);
+
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+
+	// ---- Type variants ----
+	&[data-type-prop="solid-dark"] {
+		--c-main-color: #001020;
+		--c-border-color: #141528;
+		--c-secondary-color: #F3F6FA;
+
+		&:hover {
+			--c-main-color: #238E7D;
+			--c-border-color: rgba(0, 16, 32, 0.08);
+			--c-secondary-color: #FFFFFF;
+		}
+
+		&:active {
+			--c-main-color: #187466;
+			--c-border-color: rgba(0, 16, 32, 0.08);
+			--c-secondary-color: #FFFFFF;
+		}
+	}
+
+	&[data-type-prop="solid-bordered-accent-transparent"] {
+		--c-main-color: transparent;
+		--c-border-color: #A0D9D0;
+		--c-secondary-color: #A0D9D0;
+
+		&:hover {
+			--c-main-color: #238E7D;
+			--c-border-color: rgba(0, 16, 32, 0.08);
+			--c-secondary-color: #FFFFFF;
+		}
+
+		&:active {
+			--c-main-color: #187466;
+			--c-border-color: rgba(0, 16, 32, 0.08);
+			--c-secondary-color: #FFFFFF;
+		}
+	}
+
+	// ---- BEM elements ----
+	&__text {}
+
+	&__icon {
+		width: var(--c-icon-size, var(--default-icon-size));
+		height: var(--c-icon-size, var(--default-icon-size));
+		color: var(--c-secondary-color, inherit);
+		transition: color 0.3s ease-in-out;
+	}
+}

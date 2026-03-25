@@ -1,0 +1,35 @@
+.blog-archive-list {
+    padding-top: var(--size-1-5);
+
+    &__category-select {
+        margin-bottom: var(--size-2);
+    }
+
+    &__posts-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--size-1);
+
+        @include smaller-than('tablet') {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include smaller-than('mobile') {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__posts-list-item {
+        display: contents;
+    }
+
+    &__blog-post-card {
+    }
+
+    &__pagination {
+        margin-top: var(--size-3-5);
+    }
+}

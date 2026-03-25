@@ -1,0 +1,132 @@
+.aside-cases-slider-widget {
+	border-radius: 0.25rem;
+	border: var(--size-1px) solid rgba(20, 21, 40, 0.12);
+	background: #F3F6FA;
+	padding: var(--size-2);
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: var(--size-1);
+	text-align: center;
+
+	&__background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__head {
+		position: relative;
+		z-index: 1;
+	}
+
+	&__title {
+		color: #fff;
+		font-family: 'Poltawski Nowy', serif;
+		font-size: var(--size-1-75);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 112%;
+		letter-spacing: -0.0175rem;
+		text-transform: capitalize;
+	}
+
+	&__subtitle {
+		color: #F3F6FA;
+		font-size: var(--size-1);
+		font-style: normal;
+		font-weight: 300;
+		line-height: 100%;
+		padding: 0.5rem 0;
+	}
+
+	&__slider-wrapper {
+		position: relative;
+		z-index: 1;
+		border-radius: 0.125rem;
+		border: var(--size-1px) solid rgba(160, 217, 208, 0.72);
+		background: rgba(0, 0, 0, 0.32);
+		backdrop-filter: blur(0.25rem);
+	}
+
+	.swiper {
+		overflow: hidden;
+		width: 100%;
+	}
+
+	&__slide-item {
+		padding: var(--size-2-5) var(--size-3) var(--size-2) var(--size-3);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__slide-title {
+		color: #FFF;
+		font-family: 'Poltawski Nowy', serif;
+		font-size: var(--size-2);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%;
+		text-transform: capitalize;
+	}
+
+	&__separator-line {
+		width: 4.875rem;
+		height: var(--size-1px);
+		background: #A0D9D0;
+		margin-bottom: var(--size-1);
+		margin-top: var(--size-1-25);
+	}
+
+	&__slide-text {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		align-self: stretch;
+		overflow: hidden;
+		color: #FFF;
+		text-align: center;
+		text-overflow: ellipsis;
+		font-size: 0.875rem;
+		font-weight: 300;
+		line-height: 132%;
+		min-height: calc(3 * (0.875rem * 1.32));
+	}
+
+	&__controls {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+		justify-content: center;
+		z-index: 5;
+	}
+
+	&__prev,
+	&__next {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: var(--size-2);
+		height: 1.3125rem;
+		background: none;
+		border: none;
+		border-radius: 2.5rem;
+		cursor: pointer;
+		transition: opacity 0.2s ease;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+
+	&__nav-icon {
+		width: 0.875rem;
+		height: 0.75rem;
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"devDependencies": {
+		"@wordpress/compose": "^7.22.0",
+		"@wordpress/hooks": "^4.22.0"
+	}
+}

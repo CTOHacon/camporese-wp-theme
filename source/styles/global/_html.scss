@@ -1,0 +1,25 @@
+html {
+	scroll-behavior: smooth;
+	scrollbar-gutter: stable;
+	overflow-x: clip;
+	font-family: var(--main-font-family);
+	background: #fff;
+
+	&:not(.allow-transitions) * {
+		transition: none !important;
+	}
+
+	font-size: 16px;
+
+	@media (max-width: 1728px) {
+		font-size: 0.925925925925926vw;
+	}
+
+	@include smaller-than('tablet') {
+		font-size: 1.4vw;
+	}
+
+	@include smaller-than('mobile') {
+		font-size: 5vw;
+	}
+}

@@ -1,0 +1,42 @@
+{
+  "name": "vite-build",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "preview": "vite preview",
+    "create-component": "node ./library/dev/create-component.js"
+  },
+  "devDependencies": {
+    "@types/micromatch": "^4.0.2",
+    "@types/node": "^18.19.80",
+    "@types/viewerjs": "^0.7.2",
+    "browser-sync": "^3.0.2",
+    "js-md5": "^0.7.3",
+    "micromatch": "^4.0.5",
+    "path": "^0.12.7",
+    "postcss-combine-media-query": "^1.0.1",
+    "postcss-sort-media-queries": "^5.2.0",
+    "sass": "^1.62.0",
+    "vite": "^4.2.0",
+    "vite-plugin-html-purgecss": "^0.1.1",
+    "vite-plugin-purgecss": "^0.2.12",
+    "vite-plugin-restart": "^0.3.1",
+    "vite-plugin-sass-glob-import": "^2.0.0"
+  },
+  "dependencies": {
+    "@alpinejs/mask": "^3.13.1",
+    "array-move": "^4.0.0",
+    "corner-smoothing": "^0.1.5",
+    "fast-glob": "^3.3.3",
+    "glob": "^11.0.1",
+    "inquirer": "^9.2.22",
+    "resize-observer-polyfill": "^1.5.1",
+    "simplebar": "^6.2.7",
+    "swiper": "^10.2.0",
+    "terser": "^5.39.0",
+    "viewerjs": "^1.11.7"
+  }
+}

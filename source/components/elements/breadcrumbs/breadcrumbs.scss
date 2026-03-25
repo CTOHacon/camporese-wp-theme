@@ -1,0 +1,47 @@
+.breadcrumbs {
+	&._block {
+		padding: var(--size-2) var(--container-simulation-padding);
+	}
+
+	&__inner {
+		display: flex;
+		align-items: center;
+	}
+
+	&__navigation {
+		>span {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 0.5rem;
+			font-family: 'Poltawski Nowy', serif;
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1.24;
+			color: var(--dark);
+
+			>span:not(:first-child) {
+				opacity: 0.4;
+			}
+		}
+	}
+
+	&__separator {
+		opacity: 0.4;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	// Light theme (for dark backgrounds)
+	&--light &__navigation>span {
+		color: var(--total-white);
+		opacity: 0.5;
+	}
+}

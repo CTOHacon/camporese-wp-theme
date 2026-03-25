@@ -1,0 +1,52 @@
+.phone-button {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-decoration: none;
+    color: #A0D9D0;
+
+    &:hover {
+
+        .phone-button__number,
+        .phone-button__icon {
+            color: #238E7D;
+            --icon-fill-color: #238E7D;
+        }
+    }
+
+    &__label {
+        font-size: var(--size-1);
+        font-weight: 300;
+        line-height: 1;
+        text-transform: uppercase;
+        opacity: 0.5;
+    }
+
+    &__value {
+        display: flex;
+        align-items: center;
+        gap: 0.1875rem;
+    }
+
+    &__icon {
+        width: 1.4375rem;
+        height: 1.4375rem;
+        flex-shrink: 0;
+        color: inherit;
+        transition: color 0.3s ease-in-out;
+
+        @include smaller-than('mobile') {
+            width: 1.125rem;
+            height: 1.125rem;
+        }
+    }
+
+    &__number {
+        font-size: var(--size-1-125);
+        font-weight: 400;
+        line-height: 1;
+        text-transform: uppercase;
+        white-space: nowrap;
+        transition: color 0.3s ease-in-out;
+    }
+}

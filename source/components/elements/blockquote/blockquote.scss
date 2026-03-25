@@ -1,0 +1,48 @@
+.blockquote {
+    position: relative;
+    padding: 1.5rem 2rem 1.5rem 0;
+    max-width: 44.1875rem;
+
+    @include smaller-than('mobile') {
+        padding: 1rem 1.5rem 1rem 0;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2.1875rem;
+        height: 2.5rem;
+
+        @include smaller-than('mobile') {
+            width: calc(2.1875rem * 0.7);
+            height: calc(2.5rem * 0.7);
+        }
+    }
+
+    &__content-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-left: 1.125rem;
+        border-left: 2px solid #238E7D;
+        line-height: 144%;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: var(--size-1-5);
+        line-height: 144%;
+        letter-spacing: -0.02em;
+        color: #001020;
+        font-family: "Poltawski Nowy";
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: var(--size-1-125);
+        line-height: 144%;
+        color: #001020;
+        opacity: 0.5;
+    }
+}

@@ -1,0 +1,17 @@
+.page-typography-content {
+    padding: var(--size-1);
+    border-radius: var(--regular-border-radius);
+    border: 1px solid #e9edef;
+
+    .page-typography-content-base__sidebar-layout {
+        grid-template-columns: 1fr !important;
+    }
+
+    .page-typography-content-base__main > .block-editor-block-list__layout {
+        @include lib-typography-wrapper-styles();
+    }
+
+    .page-typography-content-base__aside {
+        display: none !important;
+    }
+}

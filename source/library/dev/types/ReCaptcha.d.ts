@@ -1,0 +1,12 @@
+declare global {
+    interface Window {
+        /**
+         * Retrieves a reCAPTCHA token by executing the rendered widget.
+         * Returns a Promise that resolves to a string token.
+         */
+        getRecaptchaResult: () => Promise<string>;
+        populateFormDataWithRecaptcha: (formData: FormData) => Promise<FormData>;
+        onRecaptchaApiLoad: () => void;
+    }
+}
+export { };

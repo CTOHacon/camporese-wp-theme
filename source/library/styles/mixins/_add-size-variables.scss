@@ -1,0 +1,62 @@
+@use 'sass:map';
+@use 'sass:list';
+
+@mixin add-size-variables($sizes: ()) {
+	:root {
+		// Generate CSS variables for each size (default value)
+		@each $size, $values in $sizes {
+			--size-#{$size}: #{list.nth($values, 1)};
+		}
+
+		// Store the last output value for each size
+		$last-output-values: ();
+		@each $size, $values in $sizes {
+			$last-output-values: map.merge(
+				$last-output-values,
+				(
+					$size: list.nth($values, 1)
+				)
+			);
+		}
+
+		// Generate overrides for each breakpoint
+		$breakpoint-index: 1;
+		@each $bp, $width in $breakpoints {
+			$changes: ();
+
+			// Check for changes at this breakpoint
+			@each $size, $values in $sizes {
+				@if list.length($values) > $breakpoint-index {
+					$current-value: list.nth($values, $breakpoint-index + 1);
+					$last-value: map.get($last-output-values, $size);
+
+					@if $current-value != $last-value {
+						$changes: map.merge(
+							$changes,
+							(
+								$size: $current-value
+							)
+						);
+						$last-output-values: map.merge(
+							$last-output-values,
+							(
+								$size: $current-value
+							)
+						);
+					}
+				}
+			}
+
+			// Only output media query if there are changes
+			@if list.length(map.keys($changes)) > 0 {
+				@media (max-width: $width) {
+					@each $size, $value in $changes {
+						--size-#{$size}: #{$value};
+					}
+				}
+			}
+
+			$breakpoint-index: $breakpoint-index + 1;
+		}
+	}
+}

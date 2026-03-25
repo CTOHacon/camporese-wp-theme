@@ -1,0 +1,329 @@
+.footer {
+    background: #141528;
+    padding: var(--size-2) 0 var(--size-3-5) 0;
+
+    @include smaller-than('mobile') {
+        padding-bottom: 4rem;
+    }
+
+    // ---- Head ----
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--size-1);
+        height: var(--size-3-5);
+        margin-bottom: var(--size-3-5);
+
+        @include smaller-than('mobile') {
+            height: auto;
+        }
+    }
+
+    &__head-logo {
+        display: block;
+    }
+
+    &__logo {
+        width: 11.3125rem;
+        height: auto;
+
+        @include smaller-than('mobile') {
+            width: 9rem;
+        }
+    }
+
+    &__to-top {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #fff;
+        text-decoration: none;
+        transition: opacity 0.3s ease-in-out;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__to-top-text {
+        font-family: 'Funnel Sans', sans-serif;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+
+    &__to-top-arrow {
+        width: 0.875rem;
+        height: 0.875rem;
+    }
+
+    // ---- Main ----
+
+    &__main {
+        display: flex;
+        gap: 12.375rem;
+        color: #fff;
+        margin-bottom: var(--size-4-5);
+
+        @include smaller-than('medium-desktop') {
+            gap: 6rem;
+        }
+
+        @include smaller-than('tablet') {
+            gap: 3rem;
+        }
+
+        @include smaller-than('mobile') {
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    // ---- About ----
+
+    &__about {
+        flex: 0 0 25.125rem;
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-1-5);
+
+        @include smaller-than('tablet') {
+            flex: 0 0 20rem;
+        }
+
+        @include smaller-than('mobile') {
+            flex: unset;
+            width: 100%;
+        }
+    }
+
+    &__about-text {
+        font-family: 'Funnel Sans', sans-serif;
+        font-weight: 300;
+        font-size: var(--size-1);
+        line-height: 1.56;
+        color: #fff;
+        opacity: 0.5;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-1-5);
+    }
+
+    &__contact-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        max-width: 21.5rem;
+    }
+
+    &__contact-label {
+        font-family: 'Poltawski Nowy', serif;
+        font-weight: 400;
+        font-size: var(--size-1);
+        line-height: 1.56;
+        color: #fff;
+    }
+
+    &__contact-value {
+        font-family: 'Funnel Sans', sans-serif;
+        font-weight: 300;
+        font-size: var(--size-1);
+        line-height: 1.56;
+        color: #fff;
+        opacity: 0.5;
+        transition: opacity 0.3s ease-in-out;
+        text-decoration: underline;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__contact-link {
+        display: flex;
+        align-items: center;
+        gap: 0.625rem;
+    }
+
+    &__contact-value {
+        font-size: var(--size-1);
+        font-weight: 300;
+        line-height: 156%;
+    }
+
+    &__contact-icon {
+        width: 1.4375rem;
+        height: 1.4375rem;
+        color: #fff;
+        opacity: 0.5;
+        flex-shrink: 0;
+
+        .svg-icon {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    // ---- Menus ----
+
+    &__menus {
+        display: flex;
+        gap: 7.5rem;
+        flex: 1;
+
+        @include smaller-than('medium-desktop') {
+            gap: 4rem;
+        }
+
+        @include smaller-than('tablet') {
+            gap: 2rem;
+        }
+
+        @include smaller-than('mobile') {
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+
+    &__menu-column {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+
+        &._company-column {
+            flex-shrink: 0;
+        }
+    }
+
+    &__menu-column-title {
+        font-family: 'Poltawski Nowy', serif;
+        font-weight: 400;
+        font-size: 0.875rem;
+        line-height: 1.24;
+        letter-spacing: 0.02em;
+        color: #F3F6FA;
+    }
+
+    &__practice-areas-grid {
+        display: flex;
+        gap: var(--size-3-5);
+
+        @include smaller-than('medium-desktop') {
+            gap: 2rem;
+        }
+
+        @include smaller-than('tablet') {
+            gap: var(--size-1-5);
+        }
+
+        @include smaller-than('mobile') {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+
+    &__menu-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__menu-item {
+        list-style: none;
+    }
+
+    &__menu-link {
+        font-family: 'Funnel Sans', sans-serif;
+        font-weight: 300;
+        font-size: 0.875rem;
+        line-height: 1.24;
+        letter-spacing: 0.02em;
+        color: #F3F6FA;
+        text-decoration: none;
+        opacity: 0.5;
+        transition: opacity 0.3s ease-in-out;
+        white-space: nowrap;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    // ---- Bottom ----
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--size-1);
+
+        @include smaller-than('mobile') {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        gap: 0.875rem;
+        align-items: center;
+        opacity: 0.4;
+    }
+
+    &__social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--size-1-5);
+        height: var(--size-1-5);
+        color: #fff;
+        transition: opacity 0.3s ease-in-out;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        .svg-icon {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__legal {
+        font-family: 'Funnel Sans', sans-serif;
+        font-weight: 300;
+        font-size: var(--size-1);
+        line-height: 1.56;
+        color: #fff;
+        opacity: 0.5;
+    }
+
+    &__privacy-link {
+        color: #fff;
+        text-decoration: underline;
+        transition: opacity 0.3s ease-in-out;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__legal-separator {
+        margin: 0 0.25rem;
+    }
+
+    &__copyright {
+        // inherits from &__legal
+    }
+}

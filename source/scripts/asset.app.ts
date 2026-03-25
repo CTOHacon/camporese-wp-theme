@@ -1,0 +1,31 @@
+import Header from "~/components/singleton/header/header";
+import ContactFormRegular from "~/components/elements/contact-form-regular/contact-form-regular";
+import FaqSection from "~/components/sections/faq-section/faq-section";
+import MobileMenuModal from "~/components/singleton/mobile-menu-modal/mobile-menu-modal";
+import ContactFormModal from "~/components/singleton/contact-form-modal/contact-form-modal";
+import PracticeAreasMenuModal from "~/components/singleton/practice-areas-menu-modal/practice-areas-menu-modal";
+import FaqList from "~/components/elements/faq-list/faq-list";
+import CategorySelectDropdown from "~/components/elements/category-select-dropdown/category-select-dropdown";
+import MetricsListWidget from "~/components/elements/metrics-list-widget/metrics-list-widget";
+import AsideReviewsWidget from "~/components/elements/aside-reviews-widget/aside-reviews-widget";
+import AsideCasesSliderWidget from "~/components/elements/aside-cases-slider-widget/aside-cases-slider-widget";
+import StepsTabs from "~/components/elements/steps-tabs/steps-tabs";
+import ReviewsSection from "~/components/sections/reviews-section/reviews-section";
+import BlogPageTypographyContent from "~/components/blog/blog-page-typography-content/blog-page-typography-content";
+
+document.addEventListener('DOMContentLoaded', () => {
+    Header.getInstance();
+    ContactFormRegular.initAll();
+    FaqSection.initAll();
+    MobileMenuModal.getInstance();
+    ContactFormModal.getInstance();
+    PracticeAreasMenuModal.getInstance();
+    FaqList.initAll();
+    CategorySelectDropdown.initAll();
+    MetricsListWidget.initAll();
+    AsideReviewsWidget.initAll();
+    AsideCasesSliderWidget.initAll();
+    StepsTabs.initAll();
+    ReviewsSection.initAll();
+    BlogPageTypographyContent.initAll();
+});

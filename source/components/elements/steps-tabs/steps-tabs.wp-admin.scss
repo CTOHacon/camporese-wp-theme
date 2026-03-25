@@ -1,0 +1,22 @@
+.steps-tabs {
+    &__controls {
+        position: static !important;
+    }
+
+    &__wrapper {
+        position: static !important;
+        height: auto !important;
+    }
+
+    &__progress-track {
+        display: none !important;
+    }
+
+    &__tab {
+        position: static !important;
+
+        &:first-child {
+            display: block !important;
+        }
+    }
+}

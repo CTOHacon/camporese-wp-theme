@@ -1,0 +1,35 @@
+.background-wrapper {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        inset: 0;
+    }
+
+    &>* {
+        position: relative;
+        z-index: 1;
+    }
+
+    // Color variants
+    &._white::before {
+        background-color: var(--total-white);
+    }
+
+    &._grey::before {
+        background-color: #F3F6FA;
+    }
+
+    // Layout variants
+    &._full::before {
+        width: 100%;
+    }
+
+    &._container::before {
+        width: calc(var(--lib-container-plain-max-width) + var(--size-4-5) * 2);
+        transform: translateX(-50%);
+        left: 50%;
+    }
+}

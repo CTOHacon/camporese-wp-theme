@@ -1,0 +1,11 @@
+@use 'styles/library-provider' as *;
+
+@include add-reset-styles;
+
+@import 'styles/css-vars';
+
+@import './library/*.scss';
+
+@import './global/*.scss';
+
+@import '../components/**/!(*.wp-admin).scss';

@@ -1,0 +1,270 @@
+@mixin lib-typography-wrapper-styles {
+    --paragrapht-default-size: var(--size-1);
+    font-size: var(--size-1-125);
+    line-height: 144%;
+    font-size: var(--paragraphs-size, var(--paragrapht-default-size));
+    letter-spacing: -0.02em;
+
+    &>*:not(:first-child),
+    &>.acf-innerblocks-container>*:not(:first-child) {
+        margin-top: 1em;
+    }
+
+    &>h2:not([class]),
+    &>h2[class*='wp-block-'] {
+        font-family: 'Poltawski Nowy', serif;
+        font-weight: 400;
+        font-size: var(--size-2-5);
+        line-height: 124%;
+        letter-spacing: -0.02em;
+        text-transform: capitalize;
+
+        &:not(:first-child) {
+            margin-top: var(--size-1-5);
+        }
+    }
+
+    &>a:not([class]),
+    &>a[class*='wp-block-'] {
+        font-family: 'Poltawski Nowy', serif;
+        font-style: italic;
+        font-size: var(--size-1-25);
+        line-height: 132%;
+        color: #238E7D;
+        text-decoration: none;
+        border-bottom: 1px solid #238E7D;
+
+        &:hover {
+            border-bottom-color: transparent;
+        }
+    }
+
+    &>h3:not([class]),
+    &>h3[class*='wp-block-'] {
+        font-family: 'Poltawski Nowy', serif;
+        font-weight: 500;
+        font-size: var(--size-2-25);
+        line-height: 144%;
+        letter-spacing: -0.02em;
+        text-transform: capitalize;
+
+        &:not(:first-child) {
+            margin-top: var(--size-2-5);
+        }
+
+        @include smaller-than('mobile') {
+            font-size: var(--size-1-75);
+        }
+    }
+
+    &>h4:not([class]),
+    &>h4[class*='wp-block-'] {
+        font-family: 'Poltawski Nowy', serif;
+        font-weight: 500;
+        font-size: var(--size-2);
+        line-height: 144%;
+        letter-spacing: -0.02em;
+        text-transform: capitalize;
+
+        &:not(:first-child) {
+            margin-top: var(--size-2);
+        }
+
+        @include smaller-than('mobile') {
+            font-size: var(--size-1-5);
+        }
+    }
+
+    &>h5:not([class]),
+    &>h5[class*='wp-block-'] {
+        font-family: 'Poltawski Nowy', serif;
+        font-weight: 700;
+        font-size: var(--size-1-125);
+        line-height: 144%;
+        letter-spacing: -0.02em;
+
+        &:not(:first-child) {
+            margin-top: var(--size-2-5);
+        }
+    }
+
+    &>p:not([class]),
+    &>p[class*='wp-block-'] {
+        font-weight: 400;
+        font-size: var(--paragraphs-size, var(--paragrapht-default-size));
+        line-height: 144%;
+
+        strong {
+            font-weight: 600;
+        }
+
+        a {
+            color: #238E7D;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    // Unordered list styles
+    &>ul:not([class]),
+    &>ul[class*='wp-block-'] {
+        padding-right: var(--size-4);
+
+        @include smaller-than('mobile') {
+            padding-right: 0;
+        }
+
+        &>li {
+            padding-left: 1.25rem;
+            list-style-type: none;
+            position: relative;
+
+            &:not(:last-child) {
+                margin-bottom: 0.5em;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 0.375rem;
+                height: 0.375rem;
+                left: 0.125rem;
+                top: 50%;
+                transform: translateY(-50%);
+                background: #238E7D;
+                border-radius: 50%;
+
+                @include smaller-than('mobile') {
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    // Ordered list styles
+    &>ol:not([class]),
+    &>ol[class*='wp-block-'] {
+        padding-right: var(--size-4);
+        counter-reset: item;
+
+        @include smaller-than('mobile') {
+            padding-right: 0;
+        }
+
+        &>li {
+            padding-left: 2.5rem;
+            position: relative;
+            counter-increment: item;
+
+            &:not(:last-child) {
+                margin-bottom: 0.5em;
+            }
+
+            &::marker {
+                display: none;
+            }
+
+            &:before {
+                position: absolute;
+                top: 0.1em;
+                left: 0;
+
+                content: counter(item);
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                border: var(--size-1px) solid #238E7D;
+                color: #238E7D;
+                background: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Poltawski Nowy', serif;
+                font-weight: 400;
+                font-size: 1.375rem;
+                line-height: 1;
+                letter-spacing: 0;
+            }
+        }
+    }
+
+    // Shared list item styles for both ul and ol
+    &>ul:not([class]),
+    &>ul[class*='wp-block-'],
+    &>ol:not([class]),
+    &>ol[class*='wp-block-'] {
+        &>li {
+            font-weight: 400;
+            font-size: var(--size-1-125);
+            line-height: 1.44;
+            opacity: 0.8;
+        }
+    }
+
+    &>._is-accent,
+    &>*[class*='wp-block-']._is-accent {
+        font-weight: 500;
+        font-size: var(--size-1-5);
+        line-height: 112%;
+        color: #238E7D;
+    }
+
+    &>._has-opacity,
+    &>*[class*='wp-block-']._has-opacity {
+        opacity: 0.7;
+    }
+
+    .wp-block-image {
+        overflow: hidden;
+        box-shadow: 4rem 4rem 4rem -3.5rem rgba(21, 34, 54, 0.31);
+        border-radius: 0.5rem;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5em 0;
+
+        @include smaller-than('mobile') {
+            display: block;
+            overflow-x: auto;
+        }
+
+        th,
+        td {
+            border: var(--size-1px) solid var(--grey);
+            padding: var(--size-1);
+            text-align: left;
+            vertical-align: top;
+            line-height: 150%;
+        }
+
+        th {
+            background-color: var(--semi-white);
+            font-weight: 600;
+        }
+    }
+}
+
+@mixin lib-typography-wrapper {
+
+    /*
+    Exposes
+
+    --paragraphs-size
+    */
+    .lib-typography-wrapper {
+        @include lib-typography-wrapper-styles();
+    }
+}
+
+@include lib-typography-wrapper();

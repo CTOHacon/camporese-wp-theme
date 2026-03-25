@@ -1,0 +1,33 @@
+.metrics-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--size-4-5);
+    padding: var(--size-1-5) 0 0;
+    list-style: none;
+
+    @include smaller-than('mobile') {
+        gap: var(--size-2);
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    &__value {
+        font-family: 'Poltawski Nowy', serif;
+        font-weight: 400;
+        font-size: var(--size-2-5);
+        line-height: 1.12;
+        color: #fff;
+    }
+
+    &__description {
+        font-size: var(--size-1-25);
+        line-height: 1.32;
+        text-transform: uppercase;
+        color: #238E7D;
+    }
+}

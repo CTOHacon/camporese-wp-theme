@@ -1,0 +1,39 @@
+.archive-hero {
+    border-bottom: 1px solid #B2B7BC;
+    padding-top: var(--size-1-5);
+
+    &__inner-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1.375rem;
+        max-width: 59rem;
+        margin: 0 auto;
+        padding-top: var(--size-3);
+        padding-bottom: var(--size-3-5);
+        text-align: center;
+    }
+
+    &__pretitle {
+        font-size: var(--size-1);
+        line-height: 100%;
+        color: #238E7D;
+    }
+
+    &__title {
+        font-family: 'Poltawski Nowy', serif;
+        font-weight: 600;
+        font-size: var(--size-2-75);
+        color: #001020;
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: var(--size-1);
+        line-height: 132%;
+        color: #677583;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}

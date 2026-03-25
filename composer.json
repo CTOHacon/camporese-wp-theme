@@ -1,0 +1,9 @@
+{
+    "require": {
+        "hacon/theme-core": "^1.0"
+    },
+    "require-dev": {
+        "php-stubs/wordpress-stubs": "^6.9",
+        "php-stubs/acf-pro-stubs": "^6.5"
+    }
+}

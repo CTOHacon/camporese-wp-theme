@@ -1,0 +1,120 @@
+.cta-section {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+
+    @include smaller-than('tablet') {
+        flex-direction: column;
+    }
+
+    &__image-wrapper {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        min-height: 20rem;
+
+        @include smaller-than('tablet') {
+            min-height: 16rem;
+        }
+    }
+
+    &__image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__image-label {
+        position: absolute;
+        bottom: -0.25rem;
+        left: -0.25rem;
+        padding: 0.35rem 1rem 0.35rem 0.5rem;
+        color: #001020;
+        font-family: 'Funnel Sans', sans-serif;
+        font-size: 0.95906rem;
+        font-weight: 300;
+        line-height: 132%;
+        text-transform: uppercase;
+        border-radius: 0 0.125rem 0 0;
+        border: 0.25rem solid var(--total-white);
+        background: #F3F6FA;
+        z-index: 1;
+    }
+
+    &__main-wrapper {
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-2);
+        padding: 5.38rem 4.32rem;
+
+        @include smaller-than('tablet') {
+            padding: 3.5rem 2.5rem;
+        }
+
+        @include smaller-than('mobile') {
+            padding: 2.5rem 1.5rem;
+        }
+    }
+
+    &__background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    &__main-content {
+        position: relative;
+        z-index: 1;
+        max-width: 36.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: var(--size-2);
+    }
+
+    &__title {
+        color: #F7F6F5;
+        font-family: 'Poltawski Nowy', serif;
+        font-size: var(--size-2-5);
+        font-weight: 400;
+        line-height: 112%;
+
+        @include smaller-than('mobile') {
+            font-size: var(--size-2);
+        }
+    }
+
+    &__description {
+        color: #F7F6F5;
+        opacity: 0.8;
+        font-weight: 300;
+        font-size: var(--size-1);
+        line-height: 144%;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 1.75rem;
+        align-items: center;
+
+        @include smaller-than('mobile') {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.25rem;
+        }
+    }
+
+    &__button {
+        flex-shrink: 0;
+    }
+
+    &__phone {}
+}

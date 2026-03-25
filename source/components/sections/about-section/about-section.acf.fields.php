@@ -1,0 +1,90 @@
+<?php
+
+return [
+	[
+		'key'   => 'field_about_section_pretitle',
+		'name'  => 'about_section_pretitle',
+		'label' => 'Pretitle',
+		'type'  => 'text',
+	],
+	get_acf_heading_tag_field([
+		'key'           => 'field_about_section_pretitle_tag',
+		'name'          => 'about_section_pretitle_tag',
+		'label'         => 'Pretitle Tag',
+		'default_value' => 'p',
+	]),
+	[
+		'key'   => 'field_about_section_title',
+		'name'  => 'about_section_title',
+		'label' => 'Title',
+		'type'  => 'textarea',
+		'rows'  => 2,
+	],
+	get_acf_heading_tag_field([
+		'key'           => 'field_about_section_title_tag',
+		'name'          => 'about_section_title_tag',
+		'label'         => 'Title Tag',
+		'default_value' => 'h2',
+	]),
+	[
+		'key'   => 'field_about_section_text',
+		'name'  => 'about_section_text',
+		'label' => 'Text',
+		'type'  => 'textarea',
+		'rows'  => 4,
+	],
+	[
+		'key'   => 'field_about_section_link',
+		'name'  => 'about_section_link',
+		'label' => 'Link',
+		'type'  => 'link',
+	],
+	[
+		'key'           => 'field_about_section_image',
+		'name'          => 'about_section_image',
+		'label'         => 'Image',
+		'type'          => 'image',
+		'return_format' => 'id',
+	],
+	[
+		'key'           => 'field_about_section_show_logos',
+		'name'          => 'about_section_show_logos',
+		'label'         => 'Show Proved By Logos',
+		'type'          => 'true_false',
+		'default_value' => 1,
+		'ui'            => 1,
+		'instructions'  => 'Show platform logos from <a href="' . admin_url('admin.php?page=reviews') . '" target="_blank">Reviews</a> settings (dark variation)',
+	],
+	[
+		'key'        => 'field_about_section_metrics',
+		'name'       => 'about_section_metrics',
+		'label'      => 'Metrics',
+		'type'       => 'repeater',
+		'layout'     => 'block',
+		'min'        => 0,
+		'max'        => 6,
+		'sub_fields' => [
+			[
+				'key'   => 'field_about_section_metrics_value',
+				'name'  => 'value',
+				'label' => 'Value',
+				'type'  => 'text',
+				'instructions' => 'e.g. "$1.12 Million", "10 Years"',
+			],
+			[
+				'key'   => 'field_about_section_metrics_label',
+				'name'  => 'label',
+				'label' => 'Label',
+				'type'  => 'text',
+				'instructions' => 'e.g. "Returned Refunds", "Lawyer of Experience"',
+			],
+			[
+				'key'   => 'field_about_section_metrics_description',
+				'name'  => 'description',
+				'label' => 'Description',
+				'type'  => 'textarea',
+				'rows'  => 3,
+			],
+		],
+	],
+];

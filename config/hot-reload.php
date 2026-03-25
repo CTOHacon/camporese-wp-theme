@@ -1,0 +1,7 @@
+<?php
+return [
+    "triggers" => [
+        "source/build/app-*.js",
+        "source/build/app-*.css"
+    ]
+];

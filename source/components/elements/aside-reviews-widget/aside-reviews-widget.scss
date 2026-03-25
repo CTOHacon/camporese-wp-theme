@@ -1,0 +1,186 @@
+.aside-reviews-widget {
+	&__head {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: var(--size-3-5) var(--size-2) 0 var(--size-2);
+		border-radius: 0.25rem;
+		border: var(--size-1px) solid rgba(20, 21, 40, 0.12);
+		background: #F3F6FA;
+		margin-bottom: var(--size-1);
+	}
+
+	&__stars-decoration {
+		margin-bottom: var(--size-1);
+		height: var(--size-2-5);
+		width: auto;
+	}
+
+	&__title {
+		font-family: 'Poltawski Nowy', serif;
+		font-size: var(--size-2-5);
+		font-weight: 400;
+		line-height: 100%;
+		margin-bottom: var(--size-2-5);
+	}
+
+	&__reviews-count {
+		padding: var(--size-1);
+		font-size: var(--size-1);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%;
+		text-align: center;
+		width: 100%;
+		border-top: var(--size-1px) solid rgba(20, 21, 40, 0.12);
+	}
+
+	&__reviews-body {
+		border-radius: 0.25rem;
+		border: var(--size-1px) solid rgba(20, 21, 40, 0.12);
+		background: #F3F6FA;
+		padding: var(--size-1-5);
+	}
+
+	&__reviews-slider-wrapper {
+		display: flex;
+		padding: var(--size-2) var(--size-1);
+		flex-direction: column;
+		gap: 0.625rem;
+		border-radius: 0.25rem;
+		border: var(--size-1px) solid #E5EDF6;
+		background: #FFF;
+	}
+
+	.swiper {
+		overflow: hidden;
+		width: 100%;
+	}
+
+	&__review-item {
+		padding: 0 var(--size-1) var(--size-1) var(--size-1);
+		display: flex;
+		flex-direction: column;
+		gap: var(--size-1);
+	}
+
+	&__stars {
+		display: flex;
+		gap: 0.25rem;
+	}
+
+	&__star {
+		width: var(--size-1);
+		height: var(--size-1);
+	}
+
+	&__review-title {
+		color: #141528;
+		font-family: 'Poltawski Nowy', serif;
+		font-size: 1.375rem;
+		font-weight: 700;
+		line-height: 150%;
+		letter-spacing: -0.0275rem;
+		text-transform: capitalize;
+
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		-webkit-line-clamp: 1;
+
+		@include smaller-than('mobile') {
+			font-size: var(--size-1-25);
+		}
+	}
+
+	&__review-text {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 6;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		color: #141528;
+		font-size: var(--size-1);
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		min-height: calc(6 * (var(--size-1) * 1.5));
+		letter-spacing: -0.02rem;
+		text-transform: capitalize;
+	}
+
+	&__separator {
+		width: 100%;
+		height: 0.25rem;
+		display: block;
+	}
+
+	&__author {
+		display: flex;
+		gap: 0.75rem;
+		align-items: center;
+		justify-content: left;
+	}
+
+	&__avatar {
+		width: var(--size-3);
+		height: var(--size-3);
+		border-radius: 50%;
+		object-fit: cover;
+		flex-shrink: 0;
+	}
+
+	&__author-main {
+		display: flex;
+		flex-direction: column;
+		text-transform: capitalize;
+		white-space: nowrap;
+	}
+
+	&__author-name {
+		font-family: 'Poltawski Nowy', serif;
+		font-size: var(--size-1);
+		font-weight: 400;
+		line-height: 1.33;
+		color: #001020;
+	}
+
+	&__author-date {
+		font-size: 0.875rem;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: -0.0175rem;
+		color: #677583;
+		opacity: 0.5;
+	}
+
+	&__controls {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__prev,
+	&__next {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: var(--size-2);
+		height: 1.3125rem;
+		background: #FFF;
+		border: none;
+		border-radius: 2.5rem;
+		cursor: pointer;
+		transition: background-color 0.2s ease, transform 0.2s ease;
+
+		&:hover {
+			background-color: #E5EDF6;
+		}
+	}
+
+	&__nav-icon {
+		width: 0.875rem;
+		height: 0.75rem;
+	}
+}

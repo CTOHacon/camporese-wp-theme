@@ -1,0 +1,13 @@
+body {
+	height: 100%;
+	overflow-x: clip;
+	line-height: var(--main-line-height);
+	color: var(--main-color);
+
+	margin-top: calc(var(--wp-admin--admin-bar--height, 0px));
+	transition: margin-top 0.3s ease-in-out;
+
+	@include smaller-than('mobile') {
+		margin-top: 0;
+	}
+}

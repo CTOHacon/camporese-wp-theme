@@ -1,0 +1,18 @@
+@include add-container-class('lib-container-large', 123.75rem, 0.75rem);
+@include add-container-class('lib-container', 89.0625rem, 0.75rem);
+
+:root {
+    .lib-container-large {
+        --lib-container-large-padding: 0;
+    }
+
+    @include smaller-than('tablet') {
+        --lib-container-padding: 2rem;
+    }
+
+    @include smaller-than('mobile') {
+        --lib-container-padding: 0.75rem;
+    }
+}
+
+@include add-container-class('lib-container-slim', 70.75rem, 0.75rem);

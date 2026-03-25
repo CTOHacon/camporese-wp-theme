@@ -1,0 +1,46 @@
+.partner-logos {
+	display: flex;
+	align-items: center;
+	gap: 2.5rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	@include smaller-than('mobile') {
+		gap: 1.5rem;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0.4;
+		transition: opacity 0.3s ease-in-out;
+
+		@include larger-than('mobile') {
+			flex: auto;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+	}
+
+	&__image {
+		object-fit: contain;
+		width: 100%;
+		max-width: 7.5rem;
+
+		@include smaller-than('mobile') {
+			height: 2.5rem;
+			width: auto;
+		}
+	}
+}

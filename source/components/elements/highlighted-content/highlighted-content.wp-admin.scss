@@ -1,0 +1,7 @@
+.highlighted-content {
+    .block-editor-block-list__layout {
+        &>*:not(:first-child) {
+            margin-top: 1em;
+        }
+    }
+}

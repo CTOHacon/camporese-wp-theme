@@ -1,0 +1,81 @@
+@use 'styles/library-provider' as *;
+
+.wp-block {
+	// prevents overflow-x on the editor issue
+	max-width: 100%;
+}
+
+@import 'styles/css-vars';
+@import 'styles/library/containers';
+@import 'styles/library/size-variables.generated';
+@import 'styles/library/lib-typography-wrapper';
+
+.is-root-container,
+.block-editor-block-preview__container {
+	@include add-reset-styles;
+
+	* {
+		line-height: var(--main-line-height);
+	}
+
+	color: var(--main-color);
+	font-family: var(--main-font-family);
+
+	@import 'styles/library/containers';
+
+	@import 'styles/library/swiper';
+	@import 'styles/global/default-typography-styling';
+	@import 'styles/library/alignment';
+	@import 'styles/library/width-limiters';
+	@import 'styles/library/font-sizes';
+	@import 'styles/library/font-weights';
+	@import 'styles/library/line-heights';
+	@import 'styles/library/grid';
+	@import 'styles/library/margins.generated';
+	@import 'styles/library/paddings.generated';
+
+	@import '../components/**/*.wp-admin.scss';
+
+	[data-type*='acf/'] {
+		@import '../components/**/!(*.wp-admin).scss';
+	}
+}
+
+.editor-visual-editor {
+	overflow: clip;
+}
+
+.interface-complementary-area__fill {
+	width: 400px !important;
+
+	.editor-sidebar {
+		width: 100% !important;
+	}
+}
+
+.edit-post-visual-editor .editor-styles-wrapper {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	background: #F9F7F0;
+}
+
+.edit-post-visual-editor__post-title-wrapper {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.post-type-blog .is-root-container,
+.post-type-career .is-root-container {
+	.wp-block.is-reusable {}
+
+	@include lib-typography-wrapper-styles();
+
+	width: 100%;
+	max-width: 58.3125rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.lib-typography-wrapper .block-editor-block-list__layout {
+	@include lib-typography-wrapper-styles();
+}

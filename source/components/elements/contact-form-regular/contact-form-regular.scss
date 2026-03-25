@@ -1,0 +1,149 @@
+.contact-form-regular {
+	display: flex;
+	flex-direction: column;
+
+	// ---- Head ----
+	&__head {
+		padding-bottom: var(--size-1-5);
+		padding-right: 12.5rem;
+
+		@include smaller-than('tablet') {
+			padding-right: 0;
+		}
+	}
+
+	&__title {
+		font-family: 'Poltawski Nowy', serif;
+		font-weight: 400;
+		font-size: 1.75rem;
+		line-height: 112%;
+		letter-spacing: -0.01em;
+		text-transform: capitalize;
+		color: #001020;
+	}
+
+	&__text {
+		margin-top: 0.625rem;
+		font-weight: 300;
+		font-size: 1rem;
+		line-height: 132%;
+		color: #041D37;
+		opacity: 0.8;
+	}
+
+	// ---- Fields ----
+	&__fields {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	&__row {
+		display: flex;
+		gap: 1rem;
+
+		@include smaller-than('tablet') {
+			flex-direction: column;
+		}
+	}
+
+	&__field {
+		flex: 1 1 0;
+		min-width: 0;
+	}
+
+	&__field--full {
+		flex: none;
+		width: 100%;
+	}
+
+	// ---- Form field overrides ----
+	.form-field {
+		--default-height: 3.5rem;
+		--default-padding-vertical: 0;
+		--default-padding-horizontal: 1rem;
+		--default-background-color: #F3F6FA;
+		--default-border-color: #F3F6FA;
+		--default-required-symbol-color: #E22B83;
+		--default-focus-required-symbol-color: #E22B83;
+		--default-hover-background-color: #ffffff;
+		--default-hover-border-color: #12283E;
+		--default-focus-background-color: #ffffff;
+		--default-focus-border-color: #12283E;
+		--default-error-border-color: #E22B83;
+		border-radius: 0.25rem;
+
+		[name] {
+			font-size: max(1rem, 16px);
+		}
+
+		&__focus-placeholder {
+			display: none;
+		}
+
+		&._has-error {
+			--default-border-color: #E22B83;
+			color: #E22B83;
+		}
+
+		&._required._valid {
+			--default-border-color: #008569;
+
+			&::before {
+				opacity: 1;
+			}
+
+			&::after {
+				opacity: 0;
+			}
+		}
+	}
+
+	// Textarea override
+	.form-field._textarea {
+		--default-height: auto;
+		--default-padding-vertical: 1rem;
+
+		textarea {
+			resize: none;
+			min-height: 12.5rem;
+		}
+	}
+
+	// ---- Controls ----
+	&__controls {
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+		margin-top: var(--size-1-5);
+
+		@include smaller-than('tablet') {
+			flex-direction: column;
+			align-items: stretch;
+		}
+	}
+
+	&__submit-button {
+		--c-height: 4rem;
+		--c-padding: 0 1.75rem;
+		flex-shrink: 0;
+		width: 12.5rem;
+
+		@include smaller-than('tablet') {
+			width: 100%;
+		}
+	}
+
+	&__legal-note {
+		flex: 1 1 0;
+		min-width: 0;
+		padding-right: 2rem;
+		font-weight: 400;
+		font-size: 0.75rem;
+		line-height: 133%;
+		letter-spacing: 0.03em;
+		text-transform: capitalize;
+		color: #001020;
+		opacity: 0.34;
+	}
+}

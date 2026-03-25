@@ -1,0 +1,81 @@
+.steps-tabs {
+    position: relative;
+    padding-top: var(--size-1-5);
+
+    &__controls {
+        display: flex;
+        min-height: var(--size-2);
+        padding: 0 var(--size-2);
+        justify-content: center;
+        align-items: center;
+        gap: var(--size-2);
+        border-radius: 0 0.125rem 0 0;
+        border: 0.25rem solid #FFF;
+        background: #F3F6FA;
+        left: -0.25rem;
+        position: absolute;
+        bottom: calc(100% - 0.25rem);
+    }
+
+    &__control-item {
+        color: #141528;
+        font-size: var(--size-1-25);
+        font-weight: 300;
+        line-height: 132%;
+        text-transform: uppercase;
+        opacity: 0.5;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        transition: opacity 0.3s ease-in-out;
+
+        &._active {
+            opacity: 1;
+        }
+
+        &:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+    }
+
+    &__wrapper {
+        position: relative;
+        height: 12.5rem;
+    }
+
+    &__progress-track {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        height: 100%;
+        background: #F3F6FA;
+        width: 0.1875rem;
+    }
+
+    &__progress-fill {
+        width: 100%;
+        height: 0%;
+        background: #FFB011;
+    }
+
+    &__tab {
+        padding-left: var(--size-2);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+
+        &._active {
+            display: block;
+        }
+    }
+
+    &__tab-content {
+        max-width: 49.5rem;
+    }
+}
