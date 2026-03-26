@@ -12,17 +12,23 @@
 					'lazy'      => false
 				]) ?>
 			</div>
+			<div class="page-hero__background-image-wrapper-shadow"></div>
 		<?php endif; ?>
 	</div>
 
 	<?php if ($image) : ?>
-		<div class="page-hero__image-wrapper _<?= $image_display ?>">
-			<?php component_image(['class' => 'page-hero__image'], [
-				'reference' => $image,
-				'lazy'      => false
-			]) ?>
+		<div class="lib-container-large page-hero__image-wrapper-container">
+			<div class="page-hero__image-wrapper _<?= $image_display ?>">
+				<?php component_image(['class' => 'page-hero__image'], [
+					'reference' => $image,
+					'lazy'      => false
+				]) ?>
+			</div>
 		</div>
 	<?php endif; ?>
+
+	<div class=" page-hero__shadow _<?= $image_display ?>">
+	</div>
 
 	<div class="page-hero__inner-wrapper lib-container">
 

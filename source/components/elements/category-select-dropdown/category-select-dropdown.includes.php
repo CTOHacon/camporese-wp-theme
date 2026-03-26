@@ -14,7 +14,7 @@ function component_category_select_dropdown($htmlAttributes = [], $props = [])
 {
     $categories       = $props['categories'] ?? [];
     $current_category = $props['current_category'] ?? null;
-    $placeholder      = ($props['placeholder'] ?? null) ?: 'Categories';
+    $placeholder      = ($props['placeholder'] ?? null) ?: 'All Categories';
 
     $trigger_label = $current_category ?: $placeholder;
 

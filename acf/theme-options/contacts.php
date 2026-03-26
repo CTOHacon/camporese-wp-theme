@@ -47,6 +47,30 @@ acf_add_local_field_group([
             'return_format' => 'id',
             'instructions'  => 'Map/location image displayed in the contact section.',
         ],
+        [
+            'key'   => 'field_phone_description',
+            'label' => 'Phone Description',
+            'name'  => 'field_phone_description',
+            'type'  => 'textarea',
+            'rows'  => 2,
+            'instructions' => 'Short description text displayed below the phone number in the contacts section.',
+        ],
+        [
+            'key'   => 'field_address_description',
+            'label' => 'Address Description',
+            'name'  => 'field_address_description',
+            'type'  => 'textarea',
+            'rows'  => 2,
+            'instructions' => 'Short description text displayed below the address in the contacts section.',
+        ],
+        [
+            'key'   => 'field_email_description',
+            'label' => 'Email Description',
+            'name'  => 'field_email_description',
+            'type'  => 'textarea',
+            'rows'  => 2,
+            'instructions' => 'Short description text displayed below the email in the contacts section.',
+        ],
     ],
     'location' => [
         [[

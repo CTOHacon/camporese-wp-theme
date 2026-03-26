@@ -1,7 +1,13 @@
 <?php /** ArchiveHero */ ?>
 
-<section <?= $htmlAttributesString(['class' => 'archive-hero lib-container']) ?>>
-    <div class="archive-hero__inner-wrapper">
+<section <?= $htmlAttributesString(['class' => 'archive-hero']) ?>>
+    <?php if ($show_breadcrumbs) : ?>
+        <?php component_breadcrumbs(['class' => 'archive-hero__breadcrumbs lib-container'], [
+            'use_fancy_style' => true,
+        ]) ?>
+    <?php endif; ?>
+
+    <div class="archive-hero__inner-wrapper lib-container">
         <?php if ($pretitle): ?>
             <p class="archive-hero__pretitle"><?= $pretitle ?></p>
         <?php endif; ?>

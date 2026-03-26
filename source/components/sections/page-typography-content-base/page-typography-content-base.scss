@@ -1,4 +1,8 @@
 .page-typography-content-base {
+    .breadcrumbs {
+        padding-top: var(--size-1);
+    }
+
     &__pre-title {
         color: #238E7D;
         font-size: var(--size-1-125);
@@ -17,6 +21,10 @@
         font-weight: 400;
         line-height: 124%;
         margin-bottom: var(--size-2-75);
+
+        &:is(h1) {
+            max-width: 100%;
+        }
     }
 
     &__image-wrapper {
@@ -61,13 +69,21 @@
         }
     }
 
+    --aside-shift-up: 0px;
+
+    &:has(.page-typography-content-base__image-wrapper) &__aside {
+        --aside-shift-up: 12rem;
+    }
+
     &__aside {
-        margin-top: -12rem;
         position: relative;
-        height: calc(100% + 12rem);
+        height: calc(100% + var(--aside-shift-up));
+
+        @include larger-than('mobile') {
+            margin-top: calc(-1 * var(--aside-shift-up));
+        }
 
         @include smaller-than('mobile') {
-            margin-top: 0;
             height: auto;
         }
     }
@@ -76,7 +92,5 @@
         display: flex;
         flex-direction: column;
         gap: var(--size-1);
-        position: sticky;
-        top: calc(var(--header-height, 0px) + 1rem);
     }
 }

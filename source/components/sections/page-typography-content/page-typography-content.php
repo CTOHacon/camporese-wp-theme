@@ -5,13 +5,14 @@
     'page-typography-content-base'
 ]]) ?>>
     <?php render_page_typography_content_base([
-        'pre_title'     => $pre_title,
-        'pre_title_tag' => $pre_title_tag,
-        'title'         => $title,
-        'title_tag'     => $title_tag,
-        'image'         => $image,
-        'slot'          => $slot,
-        'sidebar_slot'  => function () {
+        'pre_title'          => $pre_title,
+        'pre_title_tag'      => $pre_title_tag,
+        'title'              => $title,
+        'title_tag'          => $title_tag,
+        'image'              => $image,
+        'slot'               => $slot,
+        'enable_breadcrumbs' => $enable_breadcrumbs,
+        'sidebar_slot'       => function () {
                 ?>
         <div class="page-typography-content__sidebar-content">
             <?php

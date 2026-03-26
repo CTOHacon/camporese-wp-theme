@@ -3,9 +3,9 @@
     const { createElement: el, Fragment } = wp.element;
     const { createHigherOrderComponent } = wp.compose;
     const { InspectorControls } = wp.blockEditor;
-    const { PanelBody, ToggleControl } = wp.components;
+    const { PanelBody, ToggleControl, SelectControl } = wp.components;
 
-    const TARGET_BLOCKS = ['core/paragraph', 'core/heading'];
+    const TARGET_BLOCKS = ['core/paragraph', 'core/heading', 'core/separator'];
 
     // 1. Add custom attributes to paragraph and heading blocks
     addFilter(
@@ -25,6 +25,10 @@
                     hasOpacityClass: {
                         type: 'boolean',
                         default: false,
+                    },
+                    marginBottom: {
+                        type: 'string',
+                        default: '',
                     },
                 }),
             });
@@ -64,6 +68,14 @@
                             onChange: function (value) {
                                 setAttributes({ hasOpacityClass: value });
                             },
+                        }),
+                        el(SelectControl, {
+                            label: 'Margin Bottom',
+                            value: attributes.marginBottom || '',
+                            options: (window.camporeseBlockExtensions && window.camporeseBlockExtensions.marginOptions) || [{ value: '', label: 'Initial' }],
+                            onChange: function (value) {
+                                setAttributes({ marginBottom: value });
+                            },
                         })
                     )
                 )
@@ -87,6 +99,7 @@
             var classes = [];
             if (props.attributes.hasAccentClass) classes.push('_is-accent');
             if (props.attributes.hasOpacityClass) classes.push('_has-opacity');
+            if (props.attributes.marginBottom) classes.push(props.attributes.marginBottom);
 
             if (classes.length) {
                 var className = [props.className || '', classes.join(' ')].filter(Boolean).join(' ');

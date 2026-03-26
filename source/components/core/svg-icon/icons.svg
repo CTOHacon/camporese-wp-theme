@@ -95,15 +95,15 @@
             d="M17.5 19.5C19.9162 19.5 21.875 17.4853 21.875 15C21.875 12.5147 19.9162 10.5 17.5 10.5C15.0838 10.5 13.125 12.5147 13.125 15C13.125 17.4853 15.0838 19.5 17.5 19.5Z"
             stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
     </symbol>
-    <symbol id="category-select-chevron" viewBox="0 0 14 14" fill="none">
-        <path d="M10.5 5.25L7 8.75L3.5 5.25" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round" />
+    <symbol id="category-select-chevron" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 9L12 15L18 9" stroke="#001020" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
     <symbol id="plus" viewBox="0 0 16 16" fill="none">
         <path d="M8 1V15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
         <path d="M1 8H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
     </symbol>
     <symbol id="select-arrow" viewBox="0 0 20 20" fill="none">
-        <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M5 8L10 13L15 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+            stroke-linejoin="round" />
     </symbol>
 </svg>

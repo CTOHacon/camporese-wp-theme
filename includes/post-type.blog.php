@@ -72,8 +72,13 @@ add_action('init', 'create_blog_category_taxonomy');
 
 function set_blog_posts_per_page($query)
 {
-    if (!is_admin() && $query->is_main_query() && $query->is_post_type_archive('blog')) {
+    if (!is_admin() && $query->is_main_query() && ($query->is_post_type_archive('blog') || $query->is_tax('blog-category'))) {
         $query->set('posts_per_page', 16);
+
+        $sort = sanitize_text_field($_GET['sort'] ?? '');
+        if ($sort === 'oldest') {
+            $query->set('order', 'ASC');
+        }
     }
 }
 

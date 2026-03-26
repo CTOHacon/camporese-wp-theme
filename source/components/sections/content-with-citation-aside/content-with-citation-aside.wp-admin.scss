@@ -1,0 +1,5 @@
+.content-with-citation-aside.wp-admin {
+    .acf-innerblocks-container.block-editor-block-list__layout {
+        @include lib-typography-wrapper-styles();
+    }
+}

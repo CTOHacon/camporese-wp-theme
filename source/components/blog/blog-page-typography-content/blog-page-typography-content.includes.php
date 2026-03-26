@@ -9,6 +9,7 @@
  *     @type string $title         Title text
  *     @type string $title_tag     Title HTML tag
  *     @type int    $image         Image attachment ID
+ *     @type bool   $enable_breadcrumbs Whether to show breadcrumbs (defaults to true)
  *     @type string|callable $slot  Main content HTML or callback (e.g. the_content)
  * }
  */
@@ -30,13 +31,14 @@ function component_blog_page_typography_content($htmlAttributes = [], $props = [
     }
 
     $props = [
-        'pre_title'     => $props['pre_title'] ?? null,
-        'pre_title_tag' => $props['pre_title_tag'] ?? 'p',
-        'title'         => $props['title'] ?? null,
-        'title_tag'     => $props['title_tag'] ?? 'h1',
-        'image'         => $props['image'] ?? null,
-        'slot'          => $slot,
-        'toc_items'     => $tocItems,
+        'pre_title'          => $props['pre_title'] ?? null,
+        'pre_title_tag'      => $props['pre_title_tag'] ?? 'p',
+        'title'              => $props['title'] ?? null,
+        'title_tag'          => $props['title_tag'] ?? 'h1',
+        'image'              => $props['image'] ?? null,
+        'slot'               => $slot,
+        'toc_items'          => $tocItems,
+        'enable_breadcrumbs' => $props['enable_breadcrumbs'] ?? true,
     ];
 
     render_component_template('blog-page-typography-content', 'source/components/blog/blog-page-typography-content/blog-page-typography-content.php', $htmlAttributes, $props);

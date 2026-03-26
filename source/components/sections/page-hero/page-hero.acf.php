@@ -172,15 +172,15 @@ createACFBlock(
 			'return_format' => 'id',
 		],
 		[
-			'key'           => 'field_ph_image_display',
-			'name'          => 'image_display',
-			'label'         => 'Image Display Mode',
-			'type'          => 'select',
-			'choices'       => [
+			'key'               => 'field_ph_image_display',
+			'name'              => 'image_display',
+			'label'             => 'Image Display Mode',
+			'type'              => 'select',
+			'choices'           => [
 				'small' => 'Small (inside container)',
 				'large' => 'Large (full-height absolute)',
 			],
-			'default_value' => 'small',
+			'default_value'     => 'small',
 			'conditional_logic' => [
 				[[
 					'field'    => 'field_ph_image',
@@ -224,7 +224,7 @@ createACFBlock(
 		get_acf_margin_select_field(),
 	],
 	function ($fields, $context) {
-		$local_metrics     = $fields['local_metrics'] ?: [];
+		$local_metrics     = ($fields['local_metrics'] ?? null) ?: [];
 		$use_local_metrics = !empty($local_metrics);
 
 		component_page_hero(

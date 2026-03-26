@@ -1,0 +1,91 @@
+.contacts-section {
+    background: #F3F6FA;
+    padding: var(--size-1);
+    border-radius: 0.25rem;
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.625rem;
+
+        @include smaller-than('tablet') {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        background: var(--total-white);
+        padding: 1.375rem 1.1875rem;
+        border-radius: 0.125rem;
+        color: #141528;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background: #141528;
+            color: var(--total-white);
+        }
+    }
+
+    &__card-label {
+        font-family: 'Poltawski Nowy', serif;
+        font-weight: 700;
+        font-size: var(--size-1);
+        line-height: 1;
+        text-transform: capitalize;
+        margin-bottom: var(--size-0-5);
+    }
+
+    &__card-value {
+        font-family: 'Poltawski Nowy', serif;
+        font-weight: 400;
+        font-size: var(--size-1);
+        line-height: 1.24;
+        min-height: var(--size-2-5);
+        display: flex;
+        align-items: center;
+        margin-bottom: var(--size-0-75);
+    }
+
+    &__card-link {
+        color: inherit;
+        text-decoration: underline;
+        cursor: pointer;
+
+        .contacts-section__card:hover & {
+            text-decoration: none;
+        }
+    }
+
+    &__card:hover {
+        .contacts-section__card-link {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__card-separator {
+        display: block;
+        width: 4.875rem;
+        height: var(--size-1px);
+        background: currentColor;
+        opacity: 0.2;
+        margin-bottom: var(--size-1);
+    }
+
+    &__card-description {
+        font-family: var(--main-font-family);
+        font-weight: 300;
+        font-size: 0.875rem;
+        line-height: 1.32;
+        opacity: 0.54;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}

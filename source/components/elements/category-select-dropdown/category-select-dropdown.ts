@@ -10,7 +10,7 @@ export default class CategorySelectDropdown extends Component {
         this.trigger = this.el.querySelector('.category-select-dropdown__trigger');
 
         this.trigger?.addEventListener('click', () => this.toggleDropdown());
-        useOutsideClickListener(this.el, () => this.closeDropdown());
+        useOutsideClickListener().addListener(this.el, () => this.closeDropdown());
     }
 
     private toggleDropdown(): void {

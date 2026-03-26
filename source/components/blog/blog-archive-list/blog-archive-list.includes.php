@@ -17,10 +17,9 @@ function component_blog_archive_list($htmlAttributes = [], $props = [])
     $posts = [];
     if ($query instanceof WP_Query && !empty($query->posts)) {
         foreach ($query->posts as $post) {
-            $card_title = get_field('blog_card_title', $post->ID) ?: null;
-
             $posts[] = [
-                'title'   => $card_title ?: get_the_title($post),
+                'title'   => get_field('blog_card_title', $post->ID) ?: get_the_title($post),
+                'image'   => get_field('blog_card_image', $post->ID) ?: get_post_thumbnail_id($post) ?: null,
                 'excerpt' => has_excerpt($post) ? get_the_excerpt($post) : wp_trim_words(strip_shortcodes($post->post_content), 30),
                 'url'     => get_permalink($post),
             ];
@@ -57,11 +56,15 @@ function component_blog_archive_list($htmlAttributes = [], $props = [])
         ? $current_term->name
         : null;
 
+    // Get current sort from query param
+    $current_sort = sanitize_text_field($_GET['sort'] ?? '');
+
     $props = [
         'query'            => $query,
         'posts'            => $posts,
         'categories'       => $categories,
         'current_category' => $current_category,
+        'current_sort'     => $current_sort,
     ];
 
     render_component_template('blog-archive-list', 'source/components/blog/blog-archive-list/blog-archive-list.php', $htmlAttributes, $props);

@@ -1,0 +1,19 @@
+.blog-posts-slider {
+    &__inner {}
+
+    .swiper {
+        overflow: visible;
+    }
+
+    .swiper-slide {
+        width: 28rem;
+
+        @include smaller-than('mobile') {
+            width: auto;
+        }
+    }
+
+    &__card {
+        height: 100%;
+    }
+}

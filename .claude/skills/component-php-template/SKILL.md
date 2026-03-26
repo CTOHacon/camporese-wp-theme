@@ -45,9 +45,9 @@ Extract ONLY explicitly present elements. Never invent HTML not in the spec.
 
 **Figma element names as BEM classes**: When Figma `data-name` uses BEM-like names (`__value`, `__item-label`), use those exact names as CSS classes. Ignore names that are raw HTML tags (`div`, `p`, `ul`). See `component-scss` skill for details.
 
-## Semantic HTML — Default Approach
+## Semantic & Accessible HTML — Default Approach
 
-Templates must produce clean, semantic, SEO-oriented markup. Choose elements by meaning, not by styling convenience.
+Templates must produce clean, semantic, accessible markup from the start. Choose elements by meaning, not by styling convenience. Always include appropriate ARIA attributes where the UI pattern calls for them (e.g., `role="tablist/tab/tabpanel"`, `aria-selected`, `aria-expanded`, `aria-controls`, `aria-labelledby`, `aria-label` on `<nav>`).
 
 | Content type | Element | Notes |
 |---|---|---|
@@ -297,13 +297,14 @@ Never use `esc_html()` — it strips HTML that props intentionally contain.
 
 ## Critical Rules
 
-1. **No data fetching** — never call `get_field()`, `get_option()`, or query the database. That belongs in `.includes.php`
-2. **No default values** — trust that `.includes.php` already set them. Use props directly
-3. **Root element** uses `$htmlAttributesString()`, inner elements use `assembleHtmlAttributes()` or plain classes
-4. `data-component` is auto-added — never add manually
-5. **Wrap ALL variables** in conditionals — `<?php if ($var): ?>`
-6. **No escaping** on content output — only `esc_attr()`/`esc_url()` inside raw `""` attributes
-7. Use `component_image` from `source/components/core/image/image.includes.php` and `component_svg_icon` from `source/components/core/svg-icon/svg-icon.includes.php` for images and icons
-8. Arrays check: `<?php if (!empty($items) && is_array($items)): ?>`
-9. Template is display-only — if you need to compute, transform, or fetch, that goes in `.includes.php`
-10. **`__title` is always a heading** — use `<h3>` by default, never `<div>`. Only deviate when `(tag:)` is explicitly specified in the spec.
+1. **Semantic + accessible by default** — use proper HTML elements and ARIA attributes from the start (tabs, accordions, nav, etc.)
+2. **No data fetching** — never call `get_field()`, `get_option()`, or query the database. That belongs in `.includes.php`
+3. **No default values** — trust that `.includes.php` already set them. Use props directly
+4. **Root element** uses `$htmlAttributesString()`, inner elements use `assembleHtmlAttributes()` or plain classes
+5. `data-component` is auto-added — never add manually
+6. **Wrap ALL variables** in conditionals — `<?php if ($var): ?>`
+7. **No escaping** on content output — only `esc_attr()`/`esc_url()` inside raw `""` attributes
+8. Use `component_image` from `source/components/core/image/image.includes.php` and `component_svg_icon` from `source/components/core/svg-icon/svg-icon.includes.php` for images and icons
+9. Arrays check: `<?php if (!empty($items) && is_array($items)): ?>`
+10. Template is display-only — if you need to compute, transform, or fetch, that goes in `.includes.php`
+11. **`__title` is always a heading** — use `<h3>` by default, never `<div>`. Only deviate when `(tag:)` is explicitly specified in the spec.

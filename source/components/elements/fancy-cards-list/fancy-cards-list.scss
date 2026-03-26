@@ -26,6 +26,10 @@
         background: #FFF;
         transition: background 0.3s ease-in-out;
 
+        @include smaller-than('mobile') {
+            padding: 1rem;
+        }
+
         &:hover {
             background: #141528;
 

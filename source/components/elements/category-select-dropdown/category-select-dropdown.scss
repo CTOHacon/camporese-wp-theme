@@ -18,40 +18,38 @@
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        padding: 0.625rem 2rem 0.625rem 1rem;
+        padding: 0.5rem var(--size-1);
         background-color: var(--total-white, #fff);
-        border: 0.0625rem solid #e5edf6;
-        border-radius: 2rem;
+        border: 0.0625rem solid #b2b7bc;
+        border-radius: 3.5rem;
         cursor: pointer;
         transition: border-color 0.2s ease, box-shadow 0.2s ease;
         white-space: nowrap;
 
         &:hover {
-            border-color: #285e98;
+            border-color: #001020;
         }
 
         &:focus-visible {
-            outline: 0.125rem solid #285e98;
+            outline: 0.125rem solid #001020;
             outline-offset: 0.125rem;
         }
     }
 
     &__trigger-icon {
-        width: 0.875rem;
-        height: 0.875rem;
+        width: var(--size-1-5);
+        height: var(--size-1-5);
         flex-shrink: 0;
         transform: rotate(0deg);
         transition: transform 0.2s ease;
-        color: #285e98;
+        color: #001020;
     }
 
     &__trigger-label {
-        font-size: 0.875rem;
+        font-size: var(--size-1);
         font-weight: 400;
         line-height: 1;
-        letter-spacing: -0.0175rem;
-        color: #285e98;
-        text-transform: capitalize;
+        color: #001020;
     }
 
     &__dropdown {
@@ -64,9 +62,9 @@
         padding: 0.5rem;
         margin: 0;
         background-color: var(--total-white, #fff);
-        border: 0.0625rem solid #e5edf6;
-        border-radius: 1rem;
-        box-shadow: 0 0.5rem 1.5rem rgba(40, 94, 152, 0.12);
+        border: 0.0625rem solid #b2b7bc;
+        border-radius: var(--size-1);
+        box-shadow: 0 0.5rem var(--size-1-5) rgba(0, 16, 32, 0.12);
         opacity: 0;
         pointer-events: none;
         transform: translateY(-0.5rem);
@@ -75,28 +73,28 @@
 
     &__option {
         &:not(:last-child) {
-            border-bottom: 0.0625rem solid #e5edf6;
+            border-bottom: 0.0625rem solid #b2b7bc;
         }
     }
 
     &__option-link {
         display: block;
-        padding: 0.625rem 1rem;
-        font-size: 0.875rem;
+        padding: 0.625rem var(--size-1);
+        font-size: var(--size-1);
         font-weight: 400;
-        color: #285e98;
+        color: #001020;
         text-decoration: none;
         border-radius: 0.5rem;
         transition: background-color 0.15s ease;
         white-space: nowrap;
 
         &:hover {
-            background-color: #e5edf6;
+            background-color: #f0f2f4;
         }
 
         &._active {
             font-weight: 500;
-            background-color: #e5edf6;
+            background-color: #f0f2f4;
         }
     }
 }

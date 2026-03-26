@@ -1,5 +1,9 @@
 <?php /** PageTypographyContentBase layout partial */ ?>
 
+<?php if ($enable_breadcrumbs) : ?>
+    <?php component_breadcrumbs(['class' => 'lib-container pt-1 mb-2'], ['use_fancy_style' => true]); ?>
+<?php endif; ?>
+
 <div class="lib-container">
     <?php if ($pre_title) : ?>
         <<?= $pre_title_tag ?> class="page-typography-content-base__pre-title"><?= $pre_title ?></<?= $pre_title_tag ?>>

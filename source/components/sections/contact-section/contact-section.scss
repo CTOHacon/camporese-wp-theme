@@ -1,166 +1,49 @@
 .contact-section {
-    display: flex;
-    min-height: 35.125rem;
-    background: #FFFFFF;
-    border: var(--size-1px) solid #E5EDF6;
-    border-radius: var(--size-1);
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #fff;
+    padding: var(--size-4-5);
+    gap: var(--size-1);
+
+    border-radius: 0.25rem;
 
     @include smaller-than('mobile') {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        padding: 0;
     }
 
-    &__contact-form {
-        flex: 1;
-        --c-inner-max-width: 28.5625rem;
-        --c-padding-top: 4.625rem;
-        --c-padding-image-side: 18.375rem;
-        --c-padding-bottom: 3.375rem;
-        --c-padding-left: 0;
-        --c-inner-min-height: 35.125rem;
-        --c-border: none;
-
-        @include smaller-than('tablet') {
-            --c-inner-min-height: unset;
-            --c-padding-image-side: 17rem;
-            --c-inner-max-width: 22rem;
-        }
+    &__form-col {
+        padding-right: var(--size-4-5);
 
         @include smaller-than('mobile') {
-            --c-padding-image-side: 0;
+            padding: 0;
         }
     }
 
-    &__contact-info {
-        flex: 0 0 calc(24.125rem + var(--size-1) * 2);
-        padding: var(--size-1);
-        display: flex;
-        flex-direction: column;
-        justify-content: end;
-
-        @include smaller-than('mobile') {
-            flex: unset;
-            width: 100%;
-            padding: var(--size-1);
-        }
-    }
-
-    &__contact-info-head {
-        width: 100%;
-        padding-left: var(--size-1);
-
-        @include smaller-than('mobile') {
-            padding-left: 0;
-        }
-    }
-
-    &__title {
-        font-style: normal;
-        font-weight: 600;
-        font-size: var(--size-1-75);
-        line-height: 106%;
-        margin-bottom: 0.5rem;
-    }
-
-    &__text {
-        font-size: var(--size-1);
-        line-height: 150%;
-        color: #677583;
+    &__map-col {
+        position: relative;
     }
 
     &__map-wrapper {
-        margin-top: var(--size-3);
-        border-radius: 0.5rem;
-        overflow: hidden;
-        width: 100%;
-        height: 19.5625rem;
-        margin-bottom: var(--size-1);
-
-        @include smaller-than('tablet') {
-            height: 13rem;
-        }
+        position: absolute;
+        inset: 0;
+        border-radius: 0.25rem;
+        border: var(--size-1px) solid var(--Grey, #B2B7BC);
+        background: #FFF;
+        padding: 0.625rem;
 
         @include smaller-than('mobile') {
-            height: 15rem;
+            position: relative;
+            height: 50vw;
         }
     }
 
     &__map-image {
-        width: 100%;
-        height: 100%;
+        position: absolute;
+        inset: 0.625rem;
+        width: calc(100% - 1.25rem);
+        height: calc(100% - 1.25rem);
         object-fit: cover;
-    }
-
-    &__contacts {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    &__contact-link {
-        display: flex;
-        align-items: center;
-        padding: 0.5rem;
-        gap: 1rem;
-        background: #FFFFFF;
-        border: var(--size-1px) solid rgba(40, 94, 152, 0.32);
-        border-radius: 0.5rem;
-        text-decoration: none;
-        transition: border-color 0.3s ease-in-out;
-
-        &:is(a):hover {
-            border-color: #285E98;
-
-            .contact-section__icon-wrapper {
-                background: #285E98;
-            }
-
-            .contact-section__icon {
-                color: #FFFFFF;
-            }
-        }
-    }
-
-    &__icon-wrapper {
-        flex-shrink: 0;
-        width: 4rem;
-        height: 4rem;
-        background: rgba(40, 94, 152, 0.1);
-        border-radius: 0.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background 0.3s ease-in-out;
-
-        @include smaller-than('mobile') {
-            width: 3rem;
-            height: 3rem;
-        }
-    }
-
-    &__icon {
-        width: 2.625rem;
-        height: 2.625rem;
-        color: #285E98;
-        transition: color 0.3s ease-in-out;
-
-        @include smaller-than('mobile') {
-            width: 1.75rem;
-            height: 1.75rem;
-        }
-    }
-
-    &__contact-text {
-        font-style: normal;
-        font-weight: 400;
-        font-size: var(--size-1-125);
-        line-height: 132%;
-    }
-
-    @include smaller-than('mobile') {
-        &__contact-info {
-            padding: var(--size-0-75);
-        }
+        border-radius: 0.125rem;
     }
 }

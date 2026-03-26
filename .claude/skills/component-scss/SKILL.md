@@ -67,7 +67,27 @@ NEVER nest BEM elements:
 ## Units
 
 **REMs only** — never `px` for sizing, spacing, typography, or border-radius.
-**Size Variables** — use `var(--size-x)` directly from the spec as-is. Never explore SCSS files to look up available sizes — if the spec says `var(--size-1)`, use it exactly, if spec says 1rem - use 1rem. All size variables are defined in `config/sizes.json` and auto-generated into SCSS.
+
+**Prefer `--size-` variables** — when a value (from Figma, spec, or design) matches a token in `config/sizes.json`, always use `var(--size-X)` instead of the literal rem. Size variables include built-in responsive scaling across breakpoints, so properties using them rarely need manual `@include smaller-than()` overrides.
+
+```scss
+// sizes.json tokens (desktop values):
+// 0.5rem → --size-0-5,  0.75rem → --size-0-75,  1rem → --size-1
+// 1.5rem → --size-1-5,  2rem → --size-2,  2.5rem → --size-2-5
+// 3rem → --size-3,  4rem → --size-4,  5rem → --size-5  …etc
+
+// ✅ Figma says 24px (1.5rem) gap — matches sizes.json → use variable
+gap: var(--size-1-5);
+
+// ✅ Figma says 48px (3rem) padding — matches sizes.json → use variable
+padding: var(--size-3);
+
+// ✅ Value has no matching token (e.g. 1.375rem, 0.625rem) → use literal rem
+padding: 1.375rem 1.1875rem;
+border-radius: 0.125rem;
+```
+
+**Use literal rem only** for values that have no corresponding size token in sizes.json (odd values like `0.125rem`, `1.375rem`, `4.875rem`, etc.).
 
 ## State Modifiers
 
@@ -136,32 +156,29 @@ Exposed properties:
 Use theme breakpoint mixins. Available breakpoints: `medium-desktop`, `tablet`, `mobile`.
 *The px values of breakpoins are defined in source/styles/_library-provider.scss*
 
+**`--size-` vars are already responsive** — they scale across breakpoints automatically (defined in `config/sizes.json`). Don't add `@include smaller-than` overrides for properties using `var(--size-X)` unless the design requires a dramatically different value at that breakpoint (e.g. layout-breaking change). Responsive overrides are for structural changes (grid columns, flex direction, display, width: 100%) and literal rem values.
+
 **Always nest `@include smaller-than` inside the selector it modifies — never collect all queries at the end of the file.**
 
 ```scss
-// ✅ CORRECT — queries live inside the element they affect
+// ✅ CORRECT — size vars handle their own scaling; overrides only for structural changes
 .component-name {
-    padding: 5rem 8rem;
-
-    @include smaller-than('tablet') {
-        padding: 4rem 3rem;
-    }
+    padding: var(--size-5) var(--size-8);
 
     @include smaller-than('mobile') {
-        flex-direction: column;
-        padding: 2rem 1.5rem;
+        flex-direction: column;  // structural change — needs override
     }
 
     &__title {
-        font-size: var(--size-2-25);
+        font-size: var(--size-2-25);  // no responsive override needed — var scales automatically
 
         @include smaller-than('tablet') {
-            br { display: none; }
+            br { display: none; }  // structural change
         }
     }
 
     &__image {
-        width: 29rem;
+        width: 29rem;  // literal value — may need responsive override
 
         @include smaller-than('mobile') {
             width: 100%;

@@ -4,8 +4,11 @@ body {
 	line-height: var(--main-line-height);
 	color: var(--main-color);
 
-	margin-top: calc(var(--wp-admin--admin-bar--height, 0px));
 	transition: margin-top 0.3s ease-in-out;
+
+	&:not(:has(.page-hero)) {
+		margin-top: var(--header-height);
+	}
 
 	@include smaller-than('mobile') {
 		margin-top: 0;

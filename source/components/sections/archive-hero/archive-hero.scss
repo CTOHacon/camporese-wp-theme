@@ -1,6 +1,9 @@
 .archive-hero {
-    border-bottom: 1px solid #B2B7BC;
-    padding-top: var(--size-1-5);
+    margin-top: var(--header-height);
+
+    &__breadcrumbs {
+        padding-top: var(--size-1-5);
+    }
 
     &__inner-wrapper {
         display: flex;
@@ -8,20 +11,21 @@
         gap: 1.375rem;
         max-width: 59rem;
         margin: 0 auto;
-        padding-top: var(--size-3);
+        padding-top: var(--size-2);
         padding-bottom: var(--size-3-5);
         text-align: center;
     }
 
     &__pretitle {
-        font-size: var(--size-1);
-        line-height: 100%;
+        font-weight: 600;
+        font-size: var(--size-1-125);
+        line-height: 132%;
         color: #238E7D;
     }
 
     &__title {
         font-family: 'Poltawski Nowy', serif;
-        font-weight: 600;
+        font-weight: 400;
         font-size: var(--size-2-75);
         color: #001020;
     }

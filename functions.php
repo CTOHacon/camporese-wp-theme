@@ -126,5 +126,6 @@ GutenbergBlocksWhitelist::initModule([
     'core/list',
     'core/list-item',
     'core/table',
+    'core/separator',
     'acf/*'
 ]);

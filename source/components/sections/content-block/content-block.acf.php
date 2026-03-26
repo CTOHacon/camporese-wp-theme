@@ -120,6 +120,7 @@ createACFBlock(
             'core/paragraph',
             'core/list',
 
+            'acf/separator',
             'acf/steps-tabs',
             'acf/fancy-cards-list',
             'acf/faq-list',

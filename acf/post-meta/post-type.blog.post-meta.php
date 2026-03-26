@@ -34,6 +34,26 @@ acf_add_local_field_group([
             'instructions' => 'Leave empty to use the post title.',
         ],
 
+        // ── Layout ─────────────────────────────────────────────────────────
+        [
+            'key'   => 'field_blog_post_meta_tab_layout',
+            'label' => 'Layout',
+            'name'  => '',
+            'type'  => 'tab',
+        ],
+        [
+            'key'           => 'field_blog_post_content_layout',
+            'label'         => 'Content Layout',
+            'name'          => 'blog_content_layout',
+            'type'          => 'select',
+            'choices'       => [
+                'blog' => 'Blog (TOC + Practice Areas)',
+                'page' => 'Page (Reviews + CTA + Cases)',
+            ],
+            'default_value' => 'blog',
+            'instructions'  => 'Choose the sidebar layout for this post.',
+        ],
+
         // ── Hero ────────────────────────────────────────────────────────────
         [
             'key'   => 'field_blog_post_meta_tab_hero',

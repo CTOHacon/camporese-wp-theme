@@ -7,8 +7,8 @@
         aria-haspopup="listbox"
         aria-expanded="false"
     >
-        <?= component_svg_icon(['class' => 'category-select-dropdown__trigger-icon'], ['name' => 'category-select-chevron']) ?>
         <span class="category-select-dropdown__trigger-label"><?= $trigger_label ?></span>
+        <?= component_svg_icon(['class' => 'category-select-dropdown__trigger-icon'], ['name' => 'category-select-chevron']) ?>
     </button>
 
     <?php if (!empty($categories) && is_array($categories)): ?>

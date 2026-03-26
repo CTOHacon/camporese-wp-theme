@@ -24,6 +24,16 @@ acf_add_local_field_group([
             'rows'         => 3,
             'instructions' => 'Leave empty to use category description',
         ],
+        [
+            'key'           => 'field_blog_category_hero_image',
+            'label'         => 'Hero Image',
+            'name'          => 'blog_category_hero_image',
+            'type'          => 'image',
+            'return_format' => 'id',
+            'preview_size'  => 'medium',
+            'library'       => 'all',
+            'instructions'  => 'Leave empty to use the global blog archive hero image',
+        ],
     ],
     'location' => [
         [[

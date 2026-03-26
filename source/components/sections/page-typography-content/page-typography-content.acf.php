@@ -11,18 +11,17 @@ createACFBlock(
             'core/heading',
             'core/paragraph',
             'core/list',
+            'core/separator',
 
+            'acf/separator',
             'acf/steps-tabs',
             'acf/fancy-cards-list',
             'acf/faq-list',
             'acf/partner-logos',
             'acf/highlighted-content',
-
             'acf/blockquote',
+
             'acf/simple-images-gallery',
-            'acf/metrics-row',
-            'acf/fancy-list-unordered',
-            'acf/fancy-list-ordered',
         ],
         'supports'       => [
             'align' => false,
@@ -58,7 +57,7 @@ createACFBlock(
             'key'           => 'field_ptc_title_tag',
             'name'          => 'ptc_title_tag',
             'label'         => 'Title Tag',
-            'default_value' => 'h1'
+            'default_value' => 'h2'
         ]),
         [
             'key'           => 'field_ptc_image',
@@ -72,6 +71,14 @@ createACFBlock(
             'label' => 'Layouting',
             'type'  => 'tab'
         ],
+        [
+            'key'           => 'field_ptc_enable_breadcrumbs',
+            'name'          => 'ptc_enable_breadcrumbs',
+            'label'         => 'Enable Breadcrumbs',
+            'type'          => 'true_false',
+            'default_value' => 0,
+            'ui'            => 1,
+        ],
         get_acf_margin_select_field(['default_value' => 'mb-1']),
     ],
     function ($fields, $context) {
@@ -83,12 +90,13 @@ createACFBlock(
                 $context['block']['className'] ?? null
             ]],
             [
-                'pre_title'     => $fields['ptc_pre_title'] ?? null,
-                'pre_title_tag' => $fields['ptc_pre_title_tag'] ?? null,
-                'title'         => $fields['ptc_title'] ?? null,
-                'title_tag'     => $fields['ptc_title_tag'] ?? null,
-                'image'         => $fields['ptc_image'] ?? null,
-                'slot'          => $content,
+                'pre_title'          => $fields['ptc_pre_title'] ?? null,
+                'pre_title_tag'      => $fields['ptc_pre_title_tag'] ?? null,
+                'title'              => $fields['ptc_title'] ?? null,
+                'title_tag'          => $fields['ptc_title_tag'] ?? null,
+                'image'              => $fields['ptc_image'] ?? null,
+                'slot'               => $content,
+                'enable_breadcrumbs' => !empty($fields['ptc_enable_breadcrumbs']),
             ]
         );
     }

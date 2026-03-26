@@ -39,6 +39,15 @@ acf_add_local_field_group([
             'name'  => 'field_blog_archive_hero_text',
             'type'  => 'textarea',
         ],
+        [
+            'key'           => 'field_blog_archive_hero_image',
+            'label'         => 'Hero Image',
+            'name'          => 'field_blog_archive_hero_image',
+            'type'          => 'image',
+            'return_format' => 'id',
+            'preview_size'  => 'medium',
+            'library'       => 'all',
+        ],
     ],
     'location' => [
         [[

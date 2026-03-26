@@ -3,7 +3,7 @@
 
 :root {
     .lib-container-large {
-        --lib-container-large-padding: 0;
+        --lib-container-large-padding: 0px;
     }
 
     @include smaller-than('tablet') {

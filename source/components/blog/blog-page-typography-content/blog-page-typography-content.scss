@@ -1,4 +1,9 @@
 .blog-page-typography-content {
+    .page-typography-content-base__aside-content {
+        position: sticky;
+        top: calc(var(--header-height, 0px) + 1rem);
+    }
+
     &__table-of-contents {
         display: flex;
         flex-direction: column;
@@ -16,7 +21,7 @@
     &__toc-list-wrapper {
         width: 100%;
         overflow: auto;
-        max-height: min(calc(100vh - 21rem), 26.875rem);
+        max-height: min(calc(100vh - 36rem), 26.875rem);
 
         @include smaller-than('mobile') {
             max-height: unset;

@@ -1,0 +1,27 @@
+.content-with-citation-aside {
+    display: grid;
+    grid-template-columns: 29rem calc(100% - 29rem - var(--size-1));
+    gap: var(--size-1);
+
+    &__aside {
+        position: sticky;
+        top: calc(var(--size-2) + var(--header-main-height));
+        align-self: start;
+    }
+
+    &__main {
+        padding-inline: var(--size-3-5);
+    }
+
+    @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+
+        &__aside {
+            position: static;
+        }
+
+        &__main {
+            padding-inline: 0;
+        }
+    }
+}

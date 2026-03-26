@@ -19,7 +19,14 @@ acf_add_local_field_group([
                 'label'   => 'Block Appearance Example',
                 'name'    => '',
                 'type'    => 'message',
-                'message' => '<img src="' . get_template_directory_uri() . '/source/components/contact-section/image.png" alt="Contact Section" style="max-width:100%;height:auto;border-radius:6px;" />',
+                'message' => '<img src="' . get_template_directory_uri() . '/source/components/sections/contact-section/image.png" alt="Contact Section" style="max-width:100%;height:auto;border-radius:6px;" />',
+            ],
+            [
+                'key'     => 'field_contact_section_defaults_info',
+                'name'    => '',
+                'label'   => '',
+                'type'    => 'message',
+                'message' => 'Form fields fall back to <a href="' . admin_url('admin.php?page=theme-parts-contact-forms') . '" target="_blank">Contact Forms</a> global settings when left empty.',
             ],
         ],
         $fields

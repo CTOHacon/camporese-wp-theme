@@ -37,12 +37,12 @@ createACFBlock(
                 $context['block']['className'] ?? null
             ]],
             [
-                'title'           => $fields['technical_page_hero_title'] ?? null,
-                'image'           => $fields['technical_page_hero_image'] ?? null,
-                'secondary_title' => $fields['technical_page_hero_secondary_title'] ?? null,
-                'text'            => $fields['technical_page_hero_text'] ?? null,
-                'button_url'      => $fields['button_url'],
-                'button_text'     => $fields['button_text'],
+                'image'       => $fields['technical_page_hero_image'] ?? null,
+                'heading'     => $fields['technical_page_hero_secondary_title'] ?? null,
+                'subtitle'    => $fields['technical_page_hero_subtitle'] ?? null,
+                'text'        => $fields['technical_page_hero_text'] ?? null,
+                'button_url'  => $fields['button_url'],
+                'button_text' => $fields['button_text'],
             ]
         );
     }

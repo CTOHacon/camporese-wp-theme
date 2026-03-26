@@ -13,17 +13,19 @@
  *     @type int      $image         Image attachment ID
  *     @type string   $slot          Main content HTML
  *     @type callable $sidebar_slot  Closure that outputs sidebar content
+ *     @type bool     $enable_breadcrumbs Whether to show breadcrumbs above pre-title
  * }
  */
 function render_page_typography_content_base($props = [])
 {
-    $pre_title     = $props['pre_title'] ?? null;
-    $pre_title_tag = $props['pre_title_tag'] ?? 'p';
-    $title         = $props['title'] ?? null;
-    $title_tag     = $props['title_tag'] ?? 'h1';
-    $image         = $props['image'] ?? null;
-    $slot          = $props['slot'] ?? null;
-    $sidebar_slot  = $props['sidebar_slot'] ?? null;
+    $pre_title          = $props['pre_title'] ?? null;
+    $pre_title_tag      = $props['pre_title_tag'] ?? 'p';
+    $title              = $props['title'] ?? null;
+    $title_tag          = $props['title_tag'] ?? 'h1';
+    $image              = $props['image'] ?? null;
+    $slot               = $props['slot'] ?? null;
+    $sidebar_slot       = $props['sidebar_slot'] ?? null;
+    $enable_breadcrumbs = $props['enable_breadcrumbs'] ?? false;
 
     include __DIR__ . '/page-typography-content-base.php';
 }

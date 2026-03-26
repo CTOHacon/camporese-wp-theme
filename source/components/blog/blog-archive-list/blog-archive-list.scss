@@ -1,8 +1,17 @@
 .blog-archive-list {
-    padding-top: var(--size-1-5);
+    background: #fff;
+    border-radius: 0.25rem;
 
-    &__category-select {
-        margin-bottom: var(--size-2);
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--size-1);
+        padding: var(--size-1-5);
+
+        @include smaller-than('mobile') {
+            padding: var(--size-1-5) 0;
+        }
     }
 
     &__posts-list {
@@ -12,6 +21,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: var(--size-1);
+        padding: 0 var(--size-1-5);
 
         @include smaller-than('tablet') {
             grid-template-columns: repeat(2, 1fr);
@@ -19,6 +29,7 @@
 
         @include smaller-than('mobile') {
             grid-template-columns: 1fr;
+            padding: 0;
         }
     }
 
@@ -26,8 +37,7 @@
         display: contents;
     }
 
-    &__blog-post-card {
-    }
+    &__blog-post-card {}
 
     &__pagination {
         margin-top: var(--size-3-5);

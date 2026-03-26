@@ -1,6 +1,5 @@
 import Header from "~/components/singleton/header/header";
 import ContactFormRegular from "~/components/elements/contact-form-regular/contact-form-regular";
-import FaqSection from "~/components/sections/faq-section/faq-section";
 import MobileMenuModal from "~/components/singleton/mobile-menu-modal/mobile-menu-modal";
 import ContactFormModal from "~/components/singleton/contact-form-modal/contact-form-modal";
 import PracticeAreasMenuModal from "~/components/singleton/practice-areas-menu-modal/practice-areas-menu-modal";
@@ -12,11 +11,13 @@ import AsideCasesSliderWidget from "~/components/elements/aside-cases-slider-wid
 import StepsTabs from "~/components/elements/steps-tabs/steps-tabs";
 import ReviewsSection from "~/components/sections/reviews-section/reviews-section";
 import BlogPageTypographyContent from "~/components/blog/blog-page-typography-content/blog-page-typography-content";
+import BlogPostsSlider from "~/components/sections/blog-posts-slider/blog-posts-slider";
+import SortByDropdown from "~/components/elements/sort-by-dropdown/sort-by-dropdown";
+import FaqTabsSection from "~/components/sections/faq-tabs-section/faq-tabs-section";
 
 document.addEventListener('DOMContentLoaded', () => {
     Header.getInstance();
     ContactFormRegular.initAll();
-    FaqSection.initAll();
     MobileMenuModal.getInstance();
     ContactFormModal.getInstance();
     PracticeAreasMenuModal.getInstance();
@@ -28,4 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     StepsTabs.initAll();
     ReviewsSection.initAll();
     BlogPageTypographyContent.initAll();
+    BlogPostsSlider.initAll();
+    SortByDropdown.initAll();
+    FaqTabsSection.initAll();
 });

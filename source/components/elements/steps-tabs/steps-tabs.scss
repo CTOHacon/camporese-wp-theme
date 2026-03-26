@@ -77,5 +77,8 @@
 
     &__tab-content {
         max-width: 49.5rem;
+        height: 101%;
+        overflow: auto;
+        padding-right: 1rem;
     }
 }
