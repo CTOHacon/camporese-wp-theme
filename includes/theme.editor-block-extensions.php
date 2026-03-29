@@ -108,3 +108,52 @@ add_action('acf/init', function () {
         ]);
     }
 }, 20);
+
+add_filter('render_block', function (string $blockContent, array $block) {
+    $prefixes = apply_filters('camporese/relevant_content_prefixes', ['acf/']);
+
+    $blockName = $block['blockName'] ?? '';
+    $matchesPrefix = false;
+    foreach ($prefixes as $prefix) {
+        if (str_starts_with($blockName, $prefix)) {
+            $matchesPrefix = true;
+            break;
+        }
+    }
+    if (!$matchesPrefix) return $blockContent;
+
+    $status = $block['attrs']['relevantContentStatus'] ?? '';
+    $needsClass = false;
+
+    if ($status === 'needs-content') {
+        $needsClass = true;
+    } elseif ($status === '' || $status === null) {
+        $shortName = substr($blockName, strpos($blockName, '/') + 1);
+        $fieldName = 'relevant_content_' . str_replace('-', '_', $shortName);
+        $needsClass = (bool) get_field($fieldName, 'option');
+    }
+    // 'filled' — $needsClass stays false
+
+    if (!$needsClass) return $blockContent;
+
+    $class = '_needs-relevant-content';
+
+    $blockContent = preg_replace(
+        '/(^\s*<\w+\b[^>]*\bclass=")/is',
+        '$1' . $class . ' ',
+        $blockContent,
+        1,
+        $count
+    );
+
+    if ($count === 0) {
+        $blockContent = preg_replace(
+            '/(^\s*<\w+\b)/is',
+            '$1 class="' . $class . '"',
+            $blockContent,
+            1
+        );
+    }
+
+    return $blockContent;
+}, 10, 2);
