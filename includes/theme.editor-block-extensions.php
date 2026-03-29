@@ -63,3 +63,48 @@ add_filter('render_block', function (string $blockContent, array $block) {
 
     return $blockContent;
 }, 10, 2);
+
+// === Relevant Content System ===
+// Automatically registers a "Needs Relevant Content" toggle on each
+// Block Defaults options page that has a matching ACF block.
+
+add_action('acf/init', function () {
+    $prefixes = apply_filters('camporese/relevant_content_prefixes', ['acf/']);
+    $blockTypes = acf_get_block_types();
+
+    foreach ($blockTypes as $fullName => $blockType) {
+        $matchesPrefix = false;
+        foreach ($prefixes as $prefix) {
+            if (str_starts_with($fullName, $prefix)) {
+                $matchesPrefix = true;
+                break;
+            }
+        }
+        if (!$matchesPrefix) continue;
+
+        $shortName = $blockType['name'];
+        $optionPageSlug = 'block-defaults-' . $shortName;
+
+        if (!acf_get_options_page($optionPageSlug)) continue;
+
+        $fieldName = 'relevant_content_' . str_replace('-', '_', $shortName);
+
+        acf_add_local_field_group([
+            'key'    => 'group_' . $fieldName,
+            'title'  => 'Relevant Content',
+            'fields' => [
+                [
+                    'key'           => 'field_' . $fieldName,
+                    'name'          => $fieldName,
+                    'label'         => 'Needs Relevant Content',
+                    'type'          => 'true_false',
+                    'default_value' => 0,
+                    'ui'            => 1,
+                ],
+            ],
+            'location' => [
+                [['param' => 'options_page', 'operator' => '==', 'value' => $optionPageSlug]],
+            ],
+        ]);
+    }
+}, 20);
