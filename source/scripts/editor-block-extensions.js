@@ -115,4 +115,94 @@
         'camporese/custom-class-editor',
         withCustomClassEditor
     );
+
+    // === Relevant Content — 3-state select for blocks matching configured prefixes ===
+
+    var RC_PREFIXES = (window.camporeseBlockExtensions && window.camporeseBlockExtensions.relevantContentPrefixes) || ['acf/'];
+
+    function matchesRelevantContentPrefix(blockName) {
+        for (var i = 0; i < RC_PREFIXES.length; i++) {
+            if (blockName.indexOf(RC_PREFIXES[i]) === 0) return true;
+        }
+        return false;
+    }
+
+    // 4. Add relevantContentStatus attribute to matching blocks
+    addFilter(
+        'blocks.registerBlockType',
+        'camporese/relevant-content-attribute',
+        function (settings, name) {
+            if (!matchesRelevantContentPrefix(name)) {
+                return settings;
+            }
+
+            return Object.assign({}, settings, {
+                attributes: Object.assign({}, settings.attributes, {
+                    relevantContentStatus: {
+                        type: 'string',
+                        default: '',
+                    },
+                }),
+            });
+        }
+    );
+
+    // 5. Add 3-state select control in inspector for matching blocks
+    var withRelevantContentControl = createHigherOrderComponent(function (BlockEdit) {
+        return function (props) {
+            if (!matchesRelevantContentPrefix(props.name)) {
+                return el(BlockEdit, props);
+            }
+
+            return el(
+                Fragment,
+                null,
+                el(BlockEdit, props),
+                el(
+                    InspectorControls,
+                    null,
+                    el(
+                        PanelBody,
+                        { title: 'Relevant Content', initialOpen: false },
+                        el(SelectControl, {
+                            label: 'Status',
+                            value: props.attributes.relevantContentStatus || '',
+                            options: [
+                                { value: '', label: 'Initial' },
+                                { value: 'needs-content', label: 'Needs Content' },
+                                { value: 'filled', label: 'Filled' },
+                            ],
+                            onChange: function (value) {
+                                props.setAttributes({ relevantContentStatus: value });
+                            },
+                        })
+                    )
+                )
+            );
+        };
+    }, 'withRelevantContentControl');
+
+    addFilter(
+        'editor.BlockEdit',
+        'camporese/relevant-content-control',
+        withRelevantContentControl
+    );
+
+    // 6. Add class to block wrapper in editor when explicitly set to "needs-content"
+    var withRelevantContentEditorClass = createHigherOrderComponent(function (BlockListBlock) {
+        return function (props) {
+            if (props.attributes.relevantContentStatus !== 'needs-content') {
+                return el(BlockListBlock, props);
+            }
+
+            var className = [props.className || '', '_needs-relevant-content'].filter(Boolean).join(' ');
+            return el(BlockListBlock, Object.assign({}, props, { className: className }));
+        };
+    }, 'withRelevantContentEditorClass');
+
+    addFilter(
+        'editor.BlockListBlock',
+        'camporese/relevant-content-editor',
+        withRelevantContentEditorClass
+    );
 })(window.wp);
