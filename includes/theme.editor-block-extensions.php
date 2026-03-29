@@ -15,7 +15,8 @@ add_action('enqueue_block_editor_assets', function () {
         $options[] = ['value' => $value, 'label' => $label];
     }
     wp_localize_script('camporese-editor-block-extensions', 'camporeseBlockExtensions', [
-        'marginOptions' => $options,
+        'marginOptions'           => $options,
+        'relevantContentPrefixes' => apply_filters('camporese/relevant_content_prefixes', ['acf/']),
     ]);
 });
 
