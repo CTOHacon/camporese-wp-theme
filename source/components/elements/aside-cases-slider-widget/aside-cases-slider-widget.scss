@@ -85,14 +85,9 @@
 	}
 
 	&__slide-text {
-		display: -webkit-box;
-		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 3;
 		align-self: stretch;
-		overflow: hidden;
 		color: #FFF;
 		text-align: center;
-		text-overflow: ellipsis;
 		font-size: 0.875rem;
 		font-weight: 300;
 		line-height: 132%;

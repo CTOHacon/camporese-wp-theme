@@ -58,17 +58,8 @@
         line-height: 1.32;
         color: #b2b7bc;
         opacity: 0.6;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 4;
         transition: opacity 0.3s ease-in-out;
         margin: 0;
-
-        @include smaller-than('mobile') {
-            -webkit-line-clamp: unset;
-        }
     }
 
     &__link {

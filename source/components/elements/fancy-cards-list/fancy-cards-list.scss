@@ -68,10 +68,6 @@
     }
 
     &__item-text {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
         color: #141528;
         text-align: center;
         text-overflow: ellipsis;

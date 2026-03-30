@@ -73,17 +73,6 @@
 		line-height: 1.44;
 		color: #041D37;
 		opacity: 0.7;
-		display: -webkit-box;
-		-webkit-line-clamp: 3;
-		-webkit-box-orient: vertical;
-		overflow: hidden;
-		text-overflow: ellipsis;
-
-		@include smaller-than('mobile') {
-			display: block;
-			-webkit-line-clamp: unset;
-			overflow: visible;
-		}
 	}
 
 	&__link {}

@@ -42,8 +42,9 @@ createACFBlock(
             'key'  => 'field_archive_hero_text',
             'name' => 'archive_hero_text',
             'label' => 'Text',
-            'type'  => 'textarea',
-            'rows'  => 3,
+            'type'         => 'textarea',
+            'rows'         => 3,
+            'instructions' => 'Recommended to use 2 lines of text.',
         ],
 
         // ==========================================

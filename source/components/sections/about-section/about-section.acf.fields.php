@@ -30,8 +30,9 @@ return [
 		'key'   => 'field_about_section_text',
 		'name'  => 'about_section_text',
 		'label' => 'Text',
-		'type'  => 'textarea',
-		'rows'  => 4,
+		'type'         => 'textarea',
+		'rows'         => 4,
+		'instructions' => 'Recommended to use 3 lines of text.',
 	],
 	[
 		'key'   => 'field_about_section_link',

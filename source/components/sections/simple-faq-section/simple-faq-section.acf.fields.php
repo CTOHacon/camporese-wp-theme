@@ -12,8 +12,9 @@ return [
         'key'   => 'field_simple_faq_section_text',
         'name'  => 'simple_faq_section_text',
         'label' => 'Text',
-        'type'  => 'textarea',
-        'rows'  => 3,
+        'type'         => 'textarea',
+        'rows'         => 3,
+        'instructions' => 'Recommended to use 2 lines of text.',
     ],
     [
         'key'          => 'field_simple_faq_section_items',

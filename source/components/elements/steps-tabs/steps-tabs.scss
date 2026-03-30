@@ -53,6 +53,7 @@
         height: 100%;
         background: #F3F6FA;
         width: 0.1875rem;
+        z-index: 2;
     }
 
     &__progress-fill {
@@ -61,24 +62,13 @@
         background: #FFB011;
     }
 
-    &__tab {
-        padding-left: var(--size-2);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+    .swiper {
+        overflow: hidden;
         height: 100%;
-        display: none;
-
-        &._active {
-            display: block;
-        }
+        padding-left: var(--size-2);
     }
 
     &__tab-content {
         max-width: 49.5rem;
-        height: 101%;
-        overflow: auto;
-        padding-right: 1rem;
     }
 }

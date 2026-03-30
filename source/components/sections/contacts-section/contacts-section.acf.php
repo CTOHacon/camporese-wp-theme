@@ -25,7 +25,7 @@ createACFBlock(
             'name'         => 'contacts_section_phone_description',
             'type'         => 'textarea',
             'rows'         => 2,
-            'instructions' => 'Override global phone description.',
+            'instructions' => 'Override global phone description. Recommended to use 3 lines of text.',
         ],
         [
             'key'          => 'field_contacts_section_address_description',
@@ -33,7 +33,7 @@ createACFBlock(
             'name'         => 'contacts_section_address_description',
             'type'         => 'textarea',
             'rows'         => 2,
-            'instructions' => 'Override global address description.',
+            'instructions' => 'Override global address description. Recommended to use 3 lines of text.',
         ],
         [
             'key'          => 'field_contacts_section_email_description',
@@ -41,7 +41,7 @@ createACFBlock(
             'name'         => 'contacts_section_email_description',
             'type'         => 'textarea',
             'rows'         => 2,
-            'instructions' => 'Override global email description.',
+            'instructions' => 'Override global email description. Recommended to use 3 lines of text.',
         ],
         ['key' => 'field_tab_contacts_section_layouting', 'label' => 'Layouting', 'type' => 'tab'],
         get_acf_margin_select_field(),

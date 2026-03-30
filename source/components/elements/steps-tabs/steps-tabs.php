@@ -19,15 +19,17 @@
                 <div class="steps-tabs__progress-fill"></div>
             </div>
 
-            <?php foreach ($items as $index => $item): ?>
-                <div <?= assembleHtmlAttributes([
-                    'class' => ['steps-tabs__tab', '_active' => $index === 0],
-                ]) ?>>
-                    <?php if (!empty($item['content'])): ?>
-                        <div class="steps-tabs__tab-content lib-typography-wrapper"><?= $item['content'] ?></div>
-                    <?php endif; ?>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <?php foreach ($items as $index => $item): ?>
+                        <div class="swiper-slide">
+                            <?php if (!empty($item['content'])): ?>
+                                <div class="steps-tabs__tab-content lib-typography-wrapper"><?= $item['content'] ?></div>
+                            <?php endif; ?>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
-            <?php endforeach; ?>
+            </div>
         </div>
     <?php endif; ?>
 </div>

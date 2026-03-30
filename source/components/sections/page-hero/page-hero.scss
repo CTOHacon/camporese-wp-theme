@@ -180,11 +180,6 @@
 		opacity: 0.5;
 		max-width: 41rem;
 
-		display: -webkit-box;
-		-webkit-line-clamp: 3;
-		-webkit-box-orient: vertical;
-		overflow: hidden;
-
 		&:not(:last-child) {
 			margin-bottom: var(--size-3);
 		}

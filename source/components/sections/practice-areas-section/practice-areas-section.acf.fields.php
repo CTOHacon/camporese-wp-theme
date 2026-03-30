@@ -37,8 +37,9 @@ return [
             [
                 'key'   => 'field_pas_item_text',
                 'name'  => 'text',
-                'label' => 'Description',
-                'type'  => 'textarea'
+                'label'        => 'Description',
+                'type'         => 'textarea',
+                'instructions' => 'Recommended to use 3–4 lines of text.',
             ],
             [
                 'key'   => 'field_pas_item_link',

@@ -59,8 +59,9 @@ createACFBlock(
 			'key'   => 'field_ph_text',
 			'name'  => 'text',
 			'label' => 'Text',
-			'type'  => 'textarea',
-			'rows'  => 4,
+			'type'         => 'textarea',
+			'rows'         => 4,
+			'instructions' => 'Recommended to use 3 lines of text.',
 		],
 
 		// ==========================================

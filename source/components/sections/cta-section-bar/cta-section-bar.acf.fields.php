@@ -10,8 +10,9 @@ return [
     [
         'key'   => 'field_cta_section_bar_text',
         'name'  => 'cta_section_bar_text',
-        'label' => 'Text',
-        'type'  => 'textarea',
+        'label'        => 'Text',
+        'type'         => 'textarea',
+        'instructions' => 'Recommended to use 2 lines of text.',
     ],
     [
         'key'   => 'field_cta_section_bar_button',

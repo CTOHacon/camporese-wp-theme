@@ -29,6 +29,7 @@ acf_add_local_field_group([
                     'label'         => 'Text',
                     'name'          => 'text',
                     'type'          => 'textarea',
+                    'instructions'  => 'Recommended to use 2 lines of text.',
                     'default_value' => 'Use Our Convenient Contact Form To Reach Out With Questions, Feedback, Or Collaboration Inquiries.',
                 ],
                 [
