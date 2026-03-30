@@ -119,6 +119,7 @@
     // === Relevant Content — 3-state select for blocks matching configured prefixes ===
 
     var RC_PREFIXES = (window.camporeseBlockExtensions && window.camporeseBlockExtensions.relevantContentPrefixes) || ['acf/'];
+    var RC_GLOBALS = (window.camporeseBlockExtensions && window.camporeseBlockExtensions.relevantContentGlobals) || [];
 
     function matchesRelevantContentPrefix(blockName) {
         for (var i = 0; i < RC_PREFIXES.length; i++) {
@@ -188,10 +189,20 @@
         withRelevantContentControl
     );
 
-    // 6. Add class to block wrapper in editor when explicitly set to "needs-content"
+    // 6. Add class to block wrapper in editor — resolves global defaults too
     var withRelevantContentEditorClass = createHigherOrderComponent(function (BlockListBlock) {
         return function (props) {
-            if (props.attributes.relevantContentStatus !== 'needs-content') {
+            var status = props.attributes.relevantContentStatus;
+            var needsClass = false;
+
+            if (status === 'needs-content') {
+                needsClass = true;
+            } else if (!status || status === '') {
+                needsClass = RC_GLOBALS.indexOf(props.name) !== -1;
+            }
+            // 'filled' — needsClass stays false
+
+            if (!needsClass) {
                 return el(BlockListBlock, props);
             }
 

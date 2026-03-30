@@ -14,9 +14,28 @@ add_action('enqueue_block_editor_assets', function () {
     foreach ($marginChoices as $value => $label) {
         $options[] = ['value' => $value, 'label' => $label];
     }
+    // Build map of blocks with global "needs relevant content" enabled
+    $relevantContentGlobals = [];
+    if (function_exists('acf_get_block_types') && function_exists('acf_get_options_page')) {
+        $prefixes = apply_filters('camporese/relevant_content_prefixes', ['acf/']);
+        foreach (acf_get_block_types() as $fullName => $blockType) {
+            foreach ($prefixes as $prefix) {
+                if (str_starts_with($fullName, $prefix)) {
+                    $shortName = substr($fullName, strlen($prefix));
+                    $fieldName = 'relevant_content_' . str_replace('-', '_', $shortName);
+                    if (get_field($fieldName, 'option')) {
+                        $relevantContentGlobals[] = $fullName;
+                    }
+                    break;
+                }
+            }
+        }
+    }
+
     wp_localize_script('camporese-editor-block-extensions', 'camporeseBlockExtensions', [
         'marginOptions'           => $options,
         'relevantContentPrefixes' => apply_filters('camporese/relevant_content_prefixes', ['acf/']),
+        'relevantContentGlobals'  => $relevantContentGlobals,
     ]);
 });
 
