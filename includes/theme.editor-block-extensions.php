@@ -74,16 +74,16 @@ add_action('acf/init', function () {
     $blockTypes = acf_get_block_types();
 
     foreach ($blockTypes as $fullName => $blockType) {
-        $matchesPrefix = false;
+        $matchedPrefix = null;
         foreach ($prefixes as $prefix) {
             if (str_starts_with($fullName, $prefix)) {
-                $matchesPrefix = true;
+                $matchedPrefix = $prefix;
                 break;
             }
         }
-        if (!$matchesPrefix) continue;
+        if (!$matchedPrefix) continue;
 
-        $shortName = $blockType['name'];
+        $shortName = substr($fullName, strlen($matchedPrefix));
         $optionPageSlug = 'block-defaults-' . $shortName;
 
         if (!acf_get_options_page($optionPageSlug)) continue;
