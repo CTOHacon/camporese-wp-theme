@@ -4,7 +4,7 @@ add_action('enqueue_block_editor_assets', function () {
     wp_enqueue_script(
         'camporese-editor-block-extensions',
         get_template_directory_uri() . '/source/scripts/editor-block-extensions.js',
-        ['wp-blocks', 'wp-element', 'wp-compose', 'wp-block-editor', 'wp-components', 'wp-hooks'],
+        ['wp-blocks', 'wp-element', 'wp-compose', 'wp-block-editor', 'wp-components', 'wp-hooks', 'wp-data'],
         filemtime(get_template_directory() . '/source/scripts/editor-block-extensions.js'),
         true
     );

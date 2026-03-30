@@ -189,31 +189,38 @@
         withRelevantContentControl
     );
 
-    // 6. Add class to block wrapper in editor — resolves global defaults too
-    var withRelevantContentEditorClass = createHigherOrderComponent(function (BlockListBlock) {
-        return function (props) {
-            var status = props.attributes.relevantContentStatus;
-            var needsClass = false;
+    // 6. Sync _needs-relevant-content class on block elements in the editor.
+    // Uses wp.data.subscribe instead of editor.BlockListBlock because ACF blocks
+    // re-render previews via AJAX, which can bypass React's class management.
+    var dataModule = wp.data;
+    if (dataModule) {
+        var rafId = null;
 
-            if (status === 'needs-content') {
-                needsClass = true;
-            } else if (!status || status === '') {
-                needsClass = RC_GLOBALS.indexOf(props.name) !== -1;
+        function syncRelevantContentClasses() {
+            var blocks = dataModule.select('core/block-editor').getBlocks();
+            syncBlocks(blocks);
+        }
+
+        function syncBlocks(blocks) {
+            for (var i = 0; i < blocks.length; i++) {
+                var block = blocks[i];
+                if (matchesRelevantContentPrefix(block.name)) {
+                    var status = (block.attributes && block.attributes.relevantContentStatus) || '';
+                    var needsClass = status === 'needs-content' || (!status && RC_GLOBALS.indexOf(block.name) !== -1);
+                    var blockEl = document.querySelector('[data-block="' + block.clientId + '"]');
+                    if (blockEl) {
+                        blockEl.classList.toggle('_needs-relevant-content', needsClass);
+                    }
+                }
+                if (block.innerBlocks && block.innerBlocks.length) {
+                    syncBlocks(block.innerBlocks);
+                }
             }
-            // 'filled' — needsClass stays false
+        }
 
-            if (!needsClass) {
-                return el(BlockListBlock, props);
-            }
-
-            var className = [props.className || '', '_needs-relevant-content'].filter(Boolean).join(' ');
-            return el(BlockListBlock, Object.assign({}, props, { className: className }));
-        };
-    }, 'withRelevantContentEditorClass');
-
-    addFilter(
-        'editor.BlockListBlock',
-        'camporese/relevant-content-editor',
-        withRelevantContentEditorClass
-    );
+        dataModule.subscribe(function () {
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(syncRelevantContentClasses);
+        });
+    }
 })(window.wp);
