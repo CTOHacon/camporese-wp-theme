@@ -3,14 +3,15 @@
 function component_breadcrumbs($htmlAttributes = [], $props = [])
 {
     $defaults = [
-        'theme' => '',
+        'theme'           => '',
         'use_fancy_style' => false,
     ];
 
     $props = array_merge($defaults, $props);
 
-    component(
+    render_component_template(
         'breadcrumbs',
+        'source/components/elements/breadcrumbs/breadcrumbs.php',
         $htmlAttributes,
         $props,
     );

@@ -43,6 +43,22 @@ acf_add_local_field_group([
             ],
         ],
         [
+            'key'        => 'field_contact_form_bcc_emails',
+            'label'      => 'BCC Email Addresses for Form Submissions',
+            'name'       => 'field_contact_form_bcc_emails',
+            'type'       => 'repeater',
+            'layout'     => 'table',
+            'sub_fields' => [
+                [
+                    'key'          => 'field_bcc_email',
+                    'label'        => 'BCC Email Address',
+                    'name'         => 'email',
+                    'type'         => 'text',
+                    'instructions' => 'Enter an email address to receive BCC copies of form submissions.',
+                ],
+            ],
+        ],
+        [
             'key'          => 'field_thank_you_page_link',
             'label'        => 'Thank You Page Link',
             'name'         => 'field_thank_you_page_link',

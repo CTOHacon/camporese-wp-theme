@@ -31,7 +31,18 @@ add_action('init', function () {
             }
         }
     }
+
+    $acf_bcc_emails = get_field('field_contact_form_bcc_emails', 'option');
+    if (is_array($acf_bcc_emails)) {
+        foreach ($acf_bcc_emails as $email) {
+            if (!empty($email['email'])) {
+                $bcc_emails[] = $email['email'];
+            }
+        }
+    }
+
     $handler->setReceiverEmails($emails);
+    $handler->setBccEmails($bcc_emails ?? []);
 
     $thank_you_page = get_field('field_thank_you_page_link', 'option');
     if (!empty($thank_you_page)) {

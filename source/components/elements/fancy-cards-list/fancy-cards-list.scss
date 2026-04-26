@@ -1,6 +1,6 @@
 .fancy-cards-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(var(--cols, 3), 1fr);
     gap: 0.5rem;
     padding: var(--size-1);
     border-radius: 0.25rem;

@@ -14,6 +14,13 @@ createACFBlock(
     ],
     [
         ['key' => 'field_tab_fancy_cards_list_content', 'label' => 'Content', 'type' => 'tab'],
+        [
+            'key'     => 'field_fancy_cards_list_info',
+            'name'    => '',
+            'label'   => '',
+            'type'    => 'message',
+            'message' => 'Default content is pulled from <a href="' . admin_url('admin.php?page=block-defaults-fancy-cards-list') . '" target="_blank">Fancy Cards List</a> settings. Add values below to override.',
+        ],
         ...$fields,
         ['key' => 'field_tab_fancy_cards_list_layouting', 'label' => 'Layouting', 'type' => 'tab'],
         get_acf_margin_select_field(),
