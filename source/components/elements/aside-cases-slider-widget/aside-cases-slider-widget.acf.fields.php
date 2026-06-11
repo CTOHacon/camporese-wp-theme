@@ -2,6 +2,14 @@
 
 return [
 	[
+		'key'     => 'field_aside_cases_slider_widget_hidden',
+		'name'    => 'aside_cases_slider_widget_hidden',
+		'label'   => 'Hide Widget',
+		'type'    => 'true_false',
+		'ui'      => 1,
+		'default_value' => 0,
+	],
+	[
 		'key'   => 'field_aside_cases_slider_widget_title',
 		'name'  => 'aside_cases_slider_widget_title',
 		'label' => 'Title',

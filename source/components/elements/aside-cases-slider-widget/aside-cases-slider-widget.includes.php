@@ -11,6 +11,10 @@
  */
 function component_aside_cases_slider_widget($htmlAttributes = [], $props = [])
 {
+	if (get_field('aside_cases_slider_widget_hidden', 'option')) {
+		return;
+	}
+
 	$global = get_field('aside_cases_slider_widget_items', 'option') ?: [];
 
 	$props = [

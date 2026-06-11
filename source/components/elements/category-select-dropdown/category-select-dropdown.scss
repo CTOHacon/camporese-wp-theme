@@ -71,11 +71,7 @@
         transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
-    &__option {
-        &:not(:last-child) {
-            border-bottom: 0.0625rem solid #b2b7bc;
-        }
-    }
+    &__option {}
 
     &__option-link {
         display: block;

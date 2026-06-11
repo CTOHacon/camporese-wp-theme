@@ -31,7 +31,7 @@ acf_add_local_field_group([
             'label'         => 'Hero Title',
             'name'          => 'field_blog_archive_hero_title',
             'type'          => 'text',
-            'default_value' => 'Expert Humane Wildlife Removal & Prevention Tips',
+            'default_value' => '',
         ],
         [
             'key'   => 'field_blog_archive_hero_text',
